@@ -54,7 +54,7 @@ jobs:
 
       - name: Run watcher
         env:
-          REDBUS_WATCHES: ${{ secrets.REDBUS_WATCHES }}
+          REDBUS_WATCHES: ${{ vars.REDBUS_WATCHES }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           RESEND_FROM: ${{ secrets.RESEND_FROM }}
           RESEND_TO: ${{ secrets.RESEND_TO }}
