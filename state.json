@@ -52,7 +52,7 @@
         "price": 1099
       }
     },
-    "last_success_ts": "2026-08-05T05:04:27.469154+00:00",
+    "last_success_ts": "2026-08-05T05:18:30.348757+00:00",
     "watch_id": "bus:chennai:coimbatore:2026-08-15:mettur,snb"
   },
   "bus:chennai:coimbatore:2026-08-16:mettur,snb": {
@@ -60,7 +60,7 @@
     "last_alert_ts": null,
     "last_snapshots": {
       "301_2026-08-16 21:10:00": {
-        "arrival_time": "06:53 (+1d)",
+        "arrival_time": "07:00 (+1d)",
         "available": 26,
         "bus_type": "A/C Seater / Sleeper (2+1)",
         "departure_time": "21:10",
@@ -108,7 +108,7 @@
         "price": 599
       }
     },
-    "last_success_ts": "2026-08-05T05:04:27.469154+00:00",
+    "last_success_ts": "2026-08-05T05:18:30.348757+00:00",
     "watch_id": "bus:chennai:coimbatore:2026-08-16:mettur,snb"
   }
 }
