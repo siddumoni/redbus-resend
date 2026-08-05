@@ -167,6 +167,30 @@
     "last_success_ts": "2026-08-05T09:03:21.784446+00:00",
     "watch_id": "bus:chennai:coimbatore:2026-08-17:mettur,snb"
   },
+  "bus:chennai:coimbatore:2026-08-18:flix,mettur": {
+    "consecutive_failures": 0,
+    "last_alert_ts": null,
+    "last_snapshots": {
+      "301_2026-08-18 21:10:00": {
+        "arrival_time": "07:00 (+1d)",
+        "available": 43,
+        "bus_type": "A/C Seater / Sleeper (2+1)",
+        "departure_time": "21:10",
+        "operator": "Mettur Super Services(mss)",
+        "price": 522
+      },
+      "a902bd44-8fc1-4e45-a40f-df0e553e22de_51_2026-08-18 20:00:00": {
+        "arrival_time": "07:35 (+1d)",
+        "available": 36,
+        "bus_type": "A/C Sleeper (2+1)",
+        "departure_time": "20:00",
+        "operator": "FlixBus",
+        "price": 675.24
+      }
+    },
+    "last_success_ts": "2026-08-05T09:13:56.804681+00:00",
+    "watch_id": "bus:chennai:coimbatore:2026-08-18:flix,mettur"
+  },
   "bus:chennai:coimbatore:2026-08-18:mettur": {
     "consecutive_failures": 0,
     "last_alert_ts": null,
@@ -238,6 +262,22 @@
     },
     "last_success_ts": "2026-08-05T09:03:21.784446+00:00",
     "watch_id": "bus:chennai:coimbatore:2026-08-18:mettur,snb"
+  },
+  "bus:chennai:coimbatore:2026-11-25:flix,mettur": {
+    "consecutive_failures": 0,
+    "last_alert_ts": null,
+    "last_snapshots": {
+      "a902bd44-8fc1-4e45-a40f-df0e553e22de_51_2026-11-25 20:00:00": {
+        "arrival_time": "07:35 (+1d)",
+        "available": 36,
+        "bus_type": "A/C Sleeper (2+1)",
+        "departure_time": "20:00",
+        "operator": "FlixBus",
+        "price": 722.86
+      }
+    },
+    "last_success_ts": "2026-08-05T09:13:56.804681+00:00",
+    "watch_id": "bus:chennai:coimbatore:2026-11-25:flix,mettur"
   },
   "bus:chennai:coimbatore:2026-11-25:mettur": {
     "consecutive_failures": 0,
