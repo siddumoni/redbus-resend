@@ -164,7 +164,7 @@
         "price": 599
       }
     },
-    "last_success_ts": "2026-08-05T09:00:02.515801+00:00",
+    "last_success_ts": "2026-08-05T09:03:21.784446+00:00",
     "watch_id": "bus:chennai:coimbatore:2026-08-17:mettur,snb"
   },
   "bus:chennai:coimbatore:2026-08-18:mettur,snb": {
@@ -220,7 +220,7 @@
         "price": 599
       }
     },
-    "last_success_ts": "2026-08-05T09:00:02.515801+00:00",
+    "last_success_ts": "2026-08-05T09:03:21.784446+00:00",
     "watch_id": "bus:chennai:coimbatore:2026-08-18:mettur,snb"
   }
 }
