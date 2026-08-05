@@ -110,5 +110,117 @@
     },
     "last_success_ts": "2026-08-05T05:18:30.348757+00:00",
     "watch_id": "bus:chennai:coimbatore:2026-08-16:mettur,snb"
+  },
+  "bus:chennai:coimbatore:2026-08-17:mettur,snb": {
+    "consecutive_failures": 0,
+    "last_alert_ts": null,
+    "last_snapshots": {
+      "301_2026-08-17 21:10:00": {
+        "arrival_time": "07:00 (+1d)",
+        "available": 40,
+        "bus_type": "A/C Seater / Sleeper (2+1)",
+        "departure_time": "21:10",
+        "operator": "Mettur Super Services(mss)",
+        "price": 522
+      },
+      "SCH168E932D_2026-08-17 11:30:00": {
+        "arrival_time": "20:45",
+        "available": 26,
+        "bus_type": "Bharat Benz A/C Sleeper (2+1)",
+        "departure_time": "11:30",
+        "operator": "SNB Travels",
+        "price": 849
+      },
+      "SCH2689318D_2026-08-17 22:00:00": {
+        "arrival_time": "07:00 (+1d)",
+        "available": 34,
+        "bus_type": "Bharat Benz A/C Seater /Sleeper (2+1)",
+        "departure_time": "22:00",
+        "operator": "SNB Travels",
+        "price": 699
+      },
+      "SCH36891653J_2026-08-17 23:00:00": {
+        "arrival_time": "07:40 (+1d)",
+        "available": 26,
+        "bus_type": "Bharat Benz A/C Sleeper (2+1)",
+        "departure_time": "23:00",
+        "operator": "SNB Travels",
+        "price": 999
+      },
+      "SCH3A8A401N_2026-08-17 14:30:00": {
+        "arrival_time": "23:45",
+        "available": 24,
+        "bus_type": "Bharat Benz A/C Sleeper (2+1)",
+        "departure_time": "14:30",
+        "operator": "SNB Travels",
+        "price": 3999
+      },
+      "SCH588559I_2026-08-17 09:15:00": {
+        "arrival_time": "18:30",
+        "available": 34,
+        "bus_type": "Bharat Benz A/C Seater /Sleeper (2+1)",
+        "departure_time": "09:15",
+        "operator": "SNB Travels",
+        "price": 599
+      }
+    },
+    "last_success_ts": "2026-08-05T09:00:02.515801+00:00",
+    "watch_id": "bus:chennai:coimbatore:2026-08-17:mettur,snb"
+  },
+  "bus:chennai:coimbatore:2026-08-18:mettur,snb": {
+    "consecutive_failures": 0,
+    "last_alert_ts": null,
+    "last_snapshots": {
+      "301_2026-08-18 21:10:00": {
+        "arrival_time": "07:00 (+1d)",
+        "available": 43,
+        "bus_type": "A/C Seater / Sleeper (2+1)",
+        "departure_time": "21:10",
+        "operator": "Mettur Super Services(mss)",
+        "price": 522
+      },
+      "SCH168E932D_2026-08-18 11:30:00": {
+        "arrival_time": "20:45",
+        "available": 26,
+        "bus_type": "Bharat Benz A/C Sleeper (2+1)",
+        "departure_time": "11:30",
+        "operator": "SNB Travels",
+        "price": 849
+      },
+      "SCH2689318D_2026-08-18 22:00:00": {
+        "arrival_time": "07:00 (+1d)",
+        "available": 34,
+        "bus_type": "Bharat Benz A/C Seater /Sleeper (2+1)",
+        "departure_time": "22:00",
+        "operator": "SNB Travels",
+        "price": 699
+      },
+      "SCH36891653J_2026-08-18 23:00:00": {
+        "arrival_time": "07:40 (+1d)",
+        "available": 26,
+        "bus_type": "Bharat Benz A/C Sleeper (2+1)",
+        "departure_time": "23:00",
+        "operator": "SNB Travels",
+        "price": 999
+      },
+      "SCH3A8A401N_2026-08-18 14:30:00": {
+        "arrival_time": "23:45",
+        "available": 24,
+        "bus_type": "Bharat Benz A/C Sleeper (2+1)",
+        "departure_time": "14:30",
+        "operator": "SNB Travels",
+        "price": 3999
+      },
+      "SCH588559I_2026-08-18 09:15:00": {
+        "arrival_time": "18:30",
+        "available": 34,
+        "bus_type": "Bharat Benz A/C Seater /Sleeper (2+1)",
+        "departure_time": "09:15",
+        "operator": "SNB Travels",
+        "price": 599
+      }
+    },
+    "last_success_ts": "2026-08-05T09:00:02.515801+00:00",
+    "watch_id": "bus:chennai:coimbatore:2026-08-18:mettur,snb"
   }
 }
