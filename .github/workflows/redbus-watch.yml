@@ -43,6 +43,12 @@ jobs:
         if: steps.playwright-cache.outputs.cache-hit != 'true'
         run: python -m playwright install --with-deps chromium
 
+      - name: Diagnose connectivity to redbus.in
+        run: |
+          echo "Testing plain HTTP reachability from this runner's IP..."
+          curl -v --max-time 15 -o /dev/null -w "\nHTTP status: %{http_code}\nTotal time: %{time_total}s\n" https://www.redbus.in || echo "curl FAILED - likely blocked at network level"
+        continue-on-error: true  # diagnostic only - don't fail the job on this
+
       - name: Run watcher
         env:
           REDBUS_WATCHES: ${{ secrets.REDBUS_WATCHES }}
