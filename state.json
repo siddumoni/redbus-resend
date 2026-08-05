@@ -167,6 +167,22 @@
     "last_success_ts": "2026-08-05T09:03:21.784446+00:00",
     "watch_id": "bus:chennai:coimbatore:2026-08-17:mettur,snb"
   },
+  "bus:chennai:coimbatore:2026-08-18:mettur": {
+    "consecutive_failures": 0,
+    "last_alert_ts": null,
+    "last_snapshots": {
+      "301_2026-08-18 21:10:00": {
+        "arrival_time": "07:00 (+1d)",
+        "available": 43,
+        "bus_type": "A/C Seater / Sleeper (2+1)",
+        "departure_time": "21:10",
+        "operator": "Mettur Super Services(mss)",
+        "price": 522
+      }
+    },
+    "last_success_ts": "2026-08-05T09:06:32.638337+00:00",
+    "watch_id": "bus:chennai:coimbatore:2026-08-18:mettur"
+  },
   "bus:chennai:coimbatore:2026-08-18:mettur,snb": {
     "consecutive_failures": 0,
     "last_alert_ts": null,
@@ -222,5 +238,12 @@
     },
     "last_success_ts": "2026-08-05T09:03:21.784446+00:00",
     "watch_id": "bus:chennai:coimbatore:2026-08-18:mettur,snb"
+  },
+  "bus:chennai:coimbatore:2026-11-25:mettur": {
+    "consecutive_failures": 0,
+    "last_alert_ts": null,
+    "last_snapshots": {},
+    "last_success_ts": "2026-08-05T09:06:32.638337+00:00",
+    "watch_id": "bus:chennai:coimbatore:2026-11-25:mettur"
   }
 }
