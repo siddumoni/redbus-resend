@@ -1,0 +1,1715 @@
+{
+  "request_url": "https://www.redbus.in/rpw/api/searchResults?fromCity=123&toCity=122&DOJ=15-Aug-2026&limit=10&offset=0&meta=true&groupId=0&sectionId=0&sort=0&sortOrder=0&from=initialLoad&getUuid=true&bT=1&clearLMBFilter=undefined&isFilterApplied=false",
+  "source_city": {
+    "id": 123,
+    "name": "Chennai"
+  },
+  "dest_city": {
+    "id": 122,
+    "name": "Bengaluru"
+  },
+  "result": {
+    "ok": true,
+    "status": 200,
+    "contentType": "application/json; charset=utf-8",
+    "rawTextLength": 27532,
+    "rawTextSnippet": "{\"success\":true,\"data\":{\"metaData\":{\"totalCount\":215,\"sections\":[{\"sectionId\":0,\"totalCount\":215,\"privateCount\":215,\"sectionInvCount\":215}],\"busLogoBaseUrl\":\"https://origin-st.redbus.in/buslogos/country/\",\"busImageBaseUrl\":\"https://s3-ap-southeast-1.amazonaws.com/rbplus/BusImage/Domestic\",\"primoCount\":36},\"inventories\":[{\"operatorId\":29526,\"travelsName\":\"Jai Sai Baba Travels\",\"routeId\":28692711,\"busType\":\"A/C Sleeper (2+1)\",\"busTypeId\":54,\"serviceName\":\"CHE-BAN\",\"serviceId\":\"SCH568818J\",\"cancell",
+    "parsed": {
+      "success": true,
+      "data": {
+        "metaData": {
+          "totalCount": 215,
+          "sections": [
+            {
+              "sectionId": 0,
+              "totalCount": 215,
+              "privateCount": 215,
+              "sectionInvCount": 215
+            }
+          ],
+          "busLogoBaseUrl": "https://origin-st.redbus.in/buslogos/country/",
+          "busImageBaseUrl": "https://s3-ap-southeast-1.amazonaws.com/rbplus/BusImage/Domestic",
+          "primoCount": 36
+        },
+        "inventories": [
+          {
+            "operatorId": 29526,
+            "travelsName": "Jai Sai Baba Travels",
+            "routeId": 28692711,
+            "busType": "A/C Sleeper (2+1)",
+            "busTypeId": 54,
+            "serviceName": "CHE-BAN",
+            "serviceId": "SCH568818J",
+            "cancellationPolicy": "0:4:95:0;4:12:50:0;12:24:20:0;24:-1:15:0",
+            "isPartialCancellationAllowed": true,
+            "operatorLogoPath": "ind/logo/29526.png",
+            "totalRatings": 4.9,
+            "numberOfReviews": "1232",
+            "departureTime": "2026-08-15 23:00:00",
+            "arrivalTime": "2026-08-16 05:50:00",
+            "journeyDurationMin": 410,
+            "firstBpTime": "2026-08-15 23:00:00",
+            "standardBpName": "Koyambedu",
+            "standardBpIdentifier": 66065,
+            "standardDpName": "Madiwala",
+            "standardDpIdentifier": 66008,
+            "doj": "2026-08-15",
+            "isSeatLayoutAvailable": true,
+            "fareList": [
+              1190,
+              1240,
+              1290,
+              1590,
+              1690
+            ],
+            "busScore": 4.99,
+            "perzScore": 4.99,
+            "isLiveTrackingAvailable": true,
+            "isMticketEnabled": true,
+            "isAc": true,
+            "isSleeper": true,
+            "maxSeatsPerTransaction": 6,
+            "availableWindowSeats": 13,
+            "availableSingleSeats": 7,
+            "availableSeats": 24,
+            "totalSeats": 37,
+            "amenities": [
+              10,
+              26,
+              4,
+              5,
+              7,
+              9,
+              19
+            ],
+            "operatorOfferCampaign": {
+              "Vld": true,
+              "CmpgList": [
+                {
+                  "RouteId": 28692711,
+                  "CampaignCode": "ALLC_b806f580",
+                  "CampaignDesc": "Get INR 100.0 Extra OFF",
+                  "CampaignNote": "[\"Minimum ticket fare : INR 300\",\"Maximum discount limit : INR 99999\"]",
+                  "CampaignType": "FLAT",
+                  "DiscountUnit": 100,
+                  "DiscountType": 1,
+                  "Discount": 100,
+                  "maxDiscount": 100,
+                  "DiscountedPrices": [
+                    1090,
+                    1140,
+                    1190,
+                    1490,
+                    1590
+                  ],
+                  "OriginalPrices": [
+                    1190,
+                    1240,
+                    1290,
+                    1590,
+                    1690
+                  ],
+                  "SeatCount": 24,
+                  "icon": "REDDEAL",
+                  "IsFemaleOffer": true,
+                  "oType": 3,
+                  "displayText": "Exclusive",
+                  "dealType": "REDDEAL",
+                  "groupSeatCount": 3,
+                  "redDealInfo": {
+                    "4": {
+                      "DiscountUnit": 10,
+                      "DiscountType": 2
+                    }
+                  }
+                }
+              ]
+            },
+            "campaignType": [
+              16,
+              86,
+              7,
+              555,
+              15
+            ],
+            "vendorCurrency": "INR",
+            "programList": [
+              3
+            ],
+            "availableAisleSeats": 7,
+            "availableUpperSeats": 12,
+            "availableLowerSeats": 12,
+            "bpCount": 11,
+            "dpCount": 10,
+            "boReqParams": [
+              {
+                "reschedulePolicy": "",
+                "serviceStartTime": "2026-08-15 23:00:00"
+              }
+            ],
+            "busImageCount": -1,
+            "persuasion": {
+              "142": {
+                "priority": 999,
+                "tagCategory": 999,
+                "id": 142,
+                "percentile": 94,
+                "score": 94
+              }
+            },
+            "rs555": true,
+            "locationSearchParams": {
+              "isExactMatch": true,
+              "sourceBp": "Koyambedu",
+              "destinationDp": "Majestic (Kempegowda Bus Station)",
+              "bpId": 24539431,
+              "dpId": 24539414
+            },
+            "serviceNotes": {
+              "PETS": "1",
+              "CHILD": "1",
+              "LUG": "2,1"
+            },
+            "rdBoostInfo": {
+              "preBoostPos": 1,
+              "wtPrice": 1385.83,
+              "seatPrices": "1190.0:2,1240.0:6,1290.0:8,1590.0:4,1690.0:4",
+              "compRids": "",
+              "compSids": "",
+              "boostDiscPer": 7.22
+            },
+            "inventoryTags": [
+              "OTG_ADDON"
+            ],
+            "fareDetailsBySeatType": {
+              "SLEEPER": [
+                {
+                  "originalPrice": 1190,
+                  "discountedPrice": 1090,
+                  "count": 20
+                }
+              ],
+              "SINGLE_SLEEPER": [
+                {
+                  "originalPrice": 1590,
+                  "discountedPrice": 1490,
+                  "count": 4
+                }
+              ]
+            }
+          },
+          {
+            "operatorId": 33625,
+            "travelsName": "V Bus Holidays",
+            "routeId": 40774586,
+            "busType": "Bharat Benz A/C Sleeper (2+1)",
+            "busTypeId": 1097,
+            "serviceName": "CHI - BGL 101",
+            "serviceId": "SCH168A1736D",
+            "cancellationPolicy": "0:4:95:0;4:8:60:0;8:12:30:0;12:-1:15:0",
+            "isPartialCancellationAllowed": true,
+            "operatorLogoPath": "ind/logo/33625.png",
+            "totalRatings": 4.9,
+            "numberOfReviews": "1141",
+            "departureTime": "2026-08-15 23:10:00",
+            "arrivalTime": "2026-08-16 06:00:00",
+            "journeyDurationMin": 410,
+            "firstBpTime": "2026-08-15 23:10:00",
+            "standardBpName": "Koyambedu",
+            "standardBpIdentifier": 66065,
+            "standardDpName": "Madiwala",
+            "standardDpIdentifier": 66008,
+            "doj": "2026-08-15",
+            "isSeatLayoutAvailable": true,
+            "fareList": [
+              1510,
+              1560,
+              1660,
+              1690,
+              1790,
+              1860
+            ],
+            "busScore": 4.95,
+            "perzScore": 4.95,
+            "isLiveTrackingAvailable": true,
+            "isMticketEnabled": true,
+            "isAc": true,
+            "isSleeper": true,
+            "maxSeatsPerTransaction": 6,
+            "availableWindowSeats": 15,
+            "availableSingleSeats": 7,
+            "availableSeats": 28,
+            "totalSeats": 37,
+            "amenities": [
+              5,
+              7,
+              35,
+              4,
+              26,
+              19
+            ],
+            "operatorOfferCampaign": {
+              "Vld": true,
+              "RTVld": true,
+              "CmpgList": [
+                {
+                  "RouteId": 40774586,
+                  "CampaignCode": "ALLF_b67ddad0",
+                  "CampaignDesc": "Get 10 % Extra OFF",
+                  "CampaignNote": "[\"Minimum ticket fare : INR 449\",\"Maximum discount limit : INR 99999\"]",
+                  "CampaignType": "PERCENT",
+                  "DiscountUnit": 10,
+                  "DiscountType": 2,
+                  "Discount": 151,
+                  "maxDiscount": 10,
+                  "DiscountedPrices": [
+                    1359,
+                    1404,
+                    1494,
+                    1521,
+                    1611,
+                    1674
+                  ],
+                  "OriginalPrices": [
+                    1510,
+                    1560,
+                    1660,
+                    1690,
+                    1790,
+                    1860
+                  ],
+                  "SeatCount": 28,
+                  "isLoggedIn": true,
+                  "RTODiscountType": 1,
+                  "RTOOffer": "10",
+                  "RTOType": 1,
+                  "RTODays": 15,
+                  "icon": "DISCOVERY",
+                  "oType": 1,
+                  "displayText": "Try new",
+                  "dealType": "DISCOVERY",
+                  "redDealInfo": {
+                    "1": {
+                      "DiscountUnit": 10,
+                      "DiscountType": 2
+                    }
+                  }
+                }
+              ]
+            },
+            "isRescheduled": true,
+            "rescheduleTime": 7,
+            "campaignType": [
+              4,
+              37,
+              86,
+              15
+            ],
+            "vendorCurrency": "INR",
+            "isFlexiOperator": true,
+            "availableAisleSeats": 9,
+            "availableUpperSeats": 14,
+            "availableLowerSeats": 14,
+            "bpCount": 26,
+            "dpCount": 9,
+            "boReqParams": [
+              {
+                "isAvailReschedule": true,
+                "reschedulePolicy": "7:-1:0:0",
+                "serviceStartTime": "2026-08-15 23:10:00"
+              }
+            ],
+            "busImageCount": -1,
+            "viaRt": "Direct Bus",
+            "persuasion": {
+              "537": {
+                "priority": 2,
+                "tagCategory": 2,
+                "id": 537
+              },
+              "541": {
+                "priority": 4,
+                "tagCategory": 4,
+                "id": 541
+              }
+            },
+            "isDirectBus": true,
+            "locationSearchParams": {
+              "isExactMatch": true,
+              "sourceBp": "Padur",
+              "destinationDp": "Majestic (Kempegowda Bus Station)",
+              "bpId": 26938142,
+              "dpId": 26937871
+            },
+            "serviceNotes": {
+              "PETS": "1",
+              "CHILD": "1",
+              "LUG": "2,1"
+            },
+            "rdBoostInfo": {
+              "preBoostPos": 2,
+              "wtPrice": 1695.35,
+              "seatPrices": "1510.0:2,1560.0:2,1660.0:8,1690.0:8,1790.0:5,1860.0:3",
+              "compRids": "",
+              "compSids": "",
+              "boostDiscPer": 10
+            },
+            "fareDetailsBySeatType": {
+              "SLEEPER": [
+                {
+                  "originalPrice": 1510,
+                  "discountedPrice": 1435,
+                  "count": 25
+                }
+              ],
+              "SINGLE_SLEEPER": [
+                {
+                  "originalPrice": 1860,
+                  "discountedPrice": 1767,
+                  "count": 3
+                }
+              ]
+            }
+          },
+          {
+            "operatorId": 33625,
+            "travelsName": "V Bus Holidays",
+            "routeId": 41838623,
+            "busType": "Bharat Benz A/C Sleeper (2+1)",
+            "busTypeId": 1097,
+            "serviceName": "CHI - BGL 102",
+            "serviceId": "SCH3B89219I",
+            "cancellationPolicy": "0:4:95:0;4:8:60:0;8:12:30:0;12:-1:15:0",
+            "isPartialCancellationAllowed": true,
+            "operatorLogoPath": "ind/logo/33625.png",
+            "totalRatings": 4.9,
+            "numberOfReviews": "1066",
+            "departureTime": "2026-08-15 22:40:00",
+            "arrivalTime": "2026-08-16 05:20:00",
+            "journeyDurationMin": 400,
+            "firstBpTime": "2026-08-15 22:40:00",
+            "standardBpName": "Koyambedu",
+            "standardBpIdentifier": 66065,
+            "standardDpName": "Madiwala",
+            "standardDpIdentifier": 66008,
+            "doj": "2026-08-15",
+            "isSeatLayoutAvailable": true,
+            "fareList": [
+              1510,
+              1560,
+              1610,
+              1710,
+              1760,
+              1810
+            ],
+            "busScore": 4.9,
+            "perzScore": 4.9,
+            "isLiveTrackingAvailable": true,
+            "isMticketEnabled": true,
+            "isAc": true,
+            "isSleeper": true,
+            "maxSeatsPerTransaction": 6,
+            "availableWindowSeats": 15,
+            "availableSingleSeats": 7,
+            "availableSeats": 28,
+            "totalSeats": 37,
+            "amenities": [
+              5,
+              7,
+              35,
+              4,
+              26,
+              19
+            ],
+            "operatorOfferCampaign": {
+              "Vld": true,
+              "RTVld": true,
+              "CmpgList": [
+                {
+                  "RouteId": 41838623,
+                  "CampaignCode": "ALLF_b67ddad0",
+                  "CampaignDesc": "Get 10 % Extra OFF",
+                  "CampaignNote": "[\"Minimum ticket fare : INR 449\",\"Maximum discount limit : INR 99999\"]",
+                  "CampaignType": "PERCENT",
+                  "DiscountUnit": 10,
+                  "DiscountType": 2,
+                  "Discount": 151,
+                  "maxDiscount": 10,
+                  "DiscountedPrices": [
+                    1359,
+                    1404,
+                    1449,
+                    1539,
+                    1584,
+                    1629
+                  ],
+                  "OriginalPrices": [
+                    1510,
+                    1560,
+                    1610,
+                    1710,
+                    1760,
+                    1810
+                  ],
+                  "SeatCount": 28,
+                  "isLoggedIn": true,
+                  "RTODiscountType": 1,
+                  "RTOOffer": "10",
+                  "RTOType": 1,
+                  "RTODays": 15,
+                  "icon": "DISCOVERY",
+                  "oType": 1,
+                  "displayText": "Try new",
+                  "dealType": "DISCOVERY",
+                  "redDealInfo": {
+                    "1": {
+                      "DiscountUnit": 10,
+                      "DiscountType": 2
+                    }
+                  }
+                }
+              ]
+            },
+            "isRescheduled": true,
+            "rescheduleTime": 7,
+            "campaignType": [
+              4,
+              37,
+              86,
+              15
+            ],
+            "vendorCurrency": "INR",
+            "isFlexiOperator": true,
+            "availableAisleSeats": 9,
+            "availableUpperSeats": 14,
+            "availableLowerSeats": 14,
+            "bpCount": 21,
+            "dpCount": 10,
+            "boReqParams": [
+              {
+                "isAvailReschedule": true,
+                "reschedulePolicy": "7:-1:0:0",
+                "serviceStartTime": "2026-08-15 22:40:00"
+              }
+            ],
+            "busImageCount": -1,
+            "viaRt": "Direct Bus",
+            "persuasion": {
+              "142": {
+                "priority": 999,
+                "tagCategory": 999,
+                "id": 142,
+                "percentile": 96,
+                "score": 96
+              },
+              "541": {
+                "priority": 4,
+                "tagCategory": 4,
+                "id": 541
+              }
+            },
+            "isDirectBus": true,
+            "locationSearchParams": {
+              "isExactMatch": true,
+              "sourceBp": "Kilambakkam Bus Stand",
+              "destinationDp": "Majestic (Kempegowda Bus Station)",
+              "bpId": 26938015,
+              "dpId": 26937871
+            },
+            "serviceNotes": {
+              "PETS": "1",
+              "CHILD": "1",
+              "LUG": "2,1"
+            },
+            "rdBoostInfo": {
+              "preBoostPos": 3,
+              "wtPrice": 1676.07,
+              "seatPrices": "1510.0:2,1560.0:2,1610.0:8,1710.0:8,1760.0:5,1810.0:3",
+              "compRids": "",
+              "compSids": "",
+              "boostDiscPer": 10
+            },
+            "fareDetailsBySeatType": {
+              "SLEEPER": [
+                {
+                  "originalPrice": 1510,
+                  "discountedPrice": 1435,
+                  "count": 25
+                }
+              ],
+              "SINGLE_SLEEPER": [
+                {
+                  "originalPrice": 1810,
+                  "discountedPrice": 1720,
+                  "count": 3
+                }
+              ]
+            }
+          },
+          {
+            "operatorId": 27518,
+            "travelsName": "ACLS Navigator",
+            "routeId": 47024841,
+            "busType": "Bharat Benz A/C Sleeper (2+1)",
+            "busTypeId": 1097,
+            "serviceName": "CHE- BGL AC SLEEPER ",
+            "serviceId": "SCH3989489N",
+            "cancellationPolicy": "0:4:90:0;4:8:50:0;8:12:25:0;12:-1:15:0",
+            "isPartialCancellationAllowed": true,
+            "operatorLogoPath": "ind/logo/27518.png",
+            "totalRatings": 4.5,
+            "numberOfReviews": "347",
+            "departureTime": "2026-08-15 23:50:00",
+            "arrivalTime": "2026-08-16 05:30:00",
+            "journeyDurationMin": 340,
+            "firstBpTime": "2026-08-15 23:35:00",
+            "standardBpName": "Koyambedu",
+            "standardBpIdentifier": 66065,
+            "standardDpName": "Madiwala",
+            "standardDpIdentifier": 66008,
+            "doj": "2026-08-15",
+            "isSeatLayoutAvailable": true,
+            "fareList": [
+              1029,
+              1129,
+              1219,
+              1309
+            ],
+            "busScore": 2.19,
+            "perzScore": 2.19,
+            "isMticketEnabled": true,
+            "isAc": true,
+            "isSleeper": true,
+            "maxSeatsPerTransaction": 6,
+            "availableWindowSeats": 15,
+            "availableSingleSeats": 6,
+            "availableSeats": 23,
+            "totalSeats": 37,
+            "amenities": [
+              10,
+              26,
+              35,
+              4,
+              5,
+              7,
+              86,
+              9
+            ],
+            "operatorOfferCampaign": {
+              "Vld": true,
+              "RTVld": true,
+              "CmpgList": [
+                {
+                  "RouteId": 47024841,
+                  "CampaignCode": "MULC_9d4b33d7",
+                  "CampaignDesc": "Get INR 100.0 Extra OFF",
+                  "CampaignNote": "[\"Minimum ticket fare : INR 130\",\"Maximum discount limit : INR 99999\"]",
+                  "CampaignType": "FLAT",
+                  "DiscountUnit": 100,
+                  "DiscountType": 1,
+                  "Discount": 100,
+                  "maxDiscount": 100,
+                  "DiscountedPrices": [
+                    929,
+                    1029,
+                    1119,
+                    1209
+                  ],
+                  "OriginalPrices": [
+                    1029,
+                    1129,
+                    1219,
+                    1309
+                  ],
+                  "SeatCount": 23,
+                  "RTODiscountType": 1,
+                  "RTOOffer": "10",
+                  "RTOType": 1,
+                  "RTODays": 15,
+                  "icon": "REDDEAL",
+                  "oType": 1,
+                  "displayText": "Exclusive",
+                  "dealType": "REDDEAL",
+                  "groupSeatCount": 3,
+                  "redDealInfo": {
+                    "1": {
+                      "DiscountUnit": 10,
+                      "DiscountType": 2
+                    },
+                    "4": {
+                      "DiscountUnit": 10,
+                      "DiscountType": 2
+                    }
+                  }
+                }
+              ]
+            },
+            "campaignType": [
+              16,
+              86,
+              15
+            ],
+            "vendorCurrency": "INR",
+            "availableAisleSeats": 8,
+            "availableUpperSeats": 12,
+            "availableLowerSeats": 11,
+            "bpCount": 26,
+            "dpCount": 18,
+            "sponsoredAttribute": {
+              "trackingId": "PYQ31GKLW68_dHJhY2tlcixTTCxsaW5lSXRlbUlkOzEyMzY2OCxhZEl0ZW1JZDsyNjMzODIsNzE5NDkwODAz",
+              "clickUrl": "https://adengine.redbus.com/ext/user/track?type=CLICK&trackingId=PYQ31GKLW68_dHJhY2tlcixTTCxsaW5lSXRlbUlkOzEyMzY2OCxhZEl0ZW1JZDsyNjMzODIsNzE5NDkwODAz",
+              "viewUrl": "https://adengine.redbus.com/ext/user/track?type=VIEW&trackingId=PYQ31GKLW68_dHJhY2tlcixTTCxsaW5lSXRlbUlkOzEyMzY2OCxhZEl0ZW1JZDsyNjMzODIsNzE5NDkwODAz"
+            },
+            "boReqParams": [
+              {
+                "reschedulePolicy": "",
+                "serviceStartTime": "2026-08-15 23:35:00"
+              }
+            ],
+            "busImageCount": -1,
+            "persuasion": {
+              "537": {
+                "priority": 2,
+                "tagCategory": 2,
+                "id": 537
+              },
+              "610": {
+                "priority": 999,
+                "tagCategory": 999,
+                "id": 610
+              }
+            },
+            "locationSearchParams": {
+              "isExactMatch": true,
+              "sourceBp": "Padur",
+              "destinationDp": "Kalasipalyam (KR Market)",
+              "bpId": 24515785,
+              "dpId": 25328414
+            },
+            "serviceNotes": {
+              "PETS": "1",
+              "CHILD": "1",
+              "LUG": "2,1"
+            },
+            "rdBoostInfo": {
+              "preBoostPos": 134,
+              "wtPrice": 1133.34,
+              "seatPrices": "1029.0:8,1129.0:8,1219.0:4,1309.0:3",
+              "compRids": "",
+              "compSids": "",
+              "boostDiscPer": 8.82
+            },
+            "fareDetailsBySeatType": {
+              "SLEEPER": [
+                {
+                  "originalPrice": 1029,
+                  "discountedPrice": 929,
+                  "count": 23
+                }
+              ]
+            }
+          },
+          {
+            "operatorId": 35387,
+            "travelsName": "GREEN CHANNEL EXPRESS",
+            "routeId": 49290531,
+            "busType": "A/C Sleeper (2+1)",
+            "busTypeId": 54,
+            "serviceName": "CHE - BNG ",
+            "serviceId": "SCH4786100M",
+            "cancellationPolicy": "0:4:90:0;4:12:50:0;12:24:25:0;24:-1:15:0",
+            "operatorLogoPath": "ind/logo/35387.png",
+            "totalRatings": 4.9,
+            "numberOfReviews": "666",
+            "departureTime": "2026-08-15 23:15:00",
+            "arrivalTime": "2026-08-16 06:05:00",
+            "journeyDurationMin": 410,
+            "firstBpTime": "2026-08-15 23:15:00",
+            "standardBpName": "Koyambedu",
+            "standardBpIdentifier": 66065,
+            "standardDpName": "Madiwala",
+            "standardDpIdentifier": 66008,
+            "doj": "2026-08-15",
+            "isSeatLayoutAvailable": true,
+            "fareList": [
+              939,
+              1069,
+              1169,
+              1269,
+              1369
+            ],
+            "busScore": 4.62,
+            "perzScore": 4.62,
+            "isLiveTrackingAvailable": true,
+            "isMticketEnabled": true,
+            "isAc": true,
+            "isSleeper": true,
+            "maxSeatsPerTransaction": 6,
+            "availableWindowSeats": 16,
+            "availableSingleSeats": 8,
+            "availableSeats": 29,
+            "totalSeats": 37,
+            "amenities": [
+              4,
+              5,
+              6,
+              7,
+              9,
+              10,
+              26,
+              86,
+              19
+            ],
+            "operatorOfferCampaign": {
+              "Vld": true,
+              "RTVld": true,
+              "CmpgList": [
+                {
+                  "RouteId": 49290531,
+                  "CampaignCode": "ALLC_e9f02c8e",
+                  "CampaignDesc": "Get INR 100.0 Extra OFF",
+                  "CampaignNote": "[\"Minimum ticket fare : INR 130\",\"Maximum discount limit : INR 99999\"]",
+                  "CampaignType": "FLAT",
+                  "DiscountUnit": 100,
+                  "DiscountType": 1,
+                  "Discount": 100,
+                  "maxDiscount": 100,
+                  "DiscountedPrices": [
+                    839,
+                    969,
+                    1069,
+                    1169,
+                    1269
+                  ],
+                  "OriginalPrices": [
+                    939,
+                    1069,
+                    1169,
+                    1269,
+                    1369
+                  ],
+                  "SeatCount": 29,
+                  "RTODiscountType": 1,
+                  "RTOOffer": "10",
+                  "RTOType": 1,
+                  "RTODays": 15,
+                  "icon": "REDDEAL",
+                  "IsFemaleOffer": true,
+                  "oType": 1,
+                  "displayText": "Exclusive",
+                  "dealType": "REDDEAL",
+                  "redDealInfo": {
+                    "1": {
+                      "DiscountUnit": 10,
+                      "DiscountType": 2
+                    }
+                  }
+                }
+              ]
+            },
+            "isRescheduled": true,
+            "rescheduleTime": 6,
+            "campaignType": [
+              37,
+              86,
+              7,
+              555,
+              15
+            ],
+            "vendorCurrency": "INR",
+            "programList": [
+              3
+            ],
+            "isFlexiOperator": true,
+            "availableAisleSeats": 9,
+            "availableUpperSeats": 15,
+            "availableLowerSeats": 14,
+            "bpCount": 37,
+            "dpCount": 14,
+            "boReqParams": [
+              {
+                "isAvailReschedule": true,
+                "reschedulePolicy": "6:-1:0:0",
+                "serviceStartTime": "2026-08-15 23:15:00"
+              }
+            ],
+            "busImageCount": -1,
+            "viaRt": "Direct Bus",
+            "persuasion": {
+              "142": {
+                "priority": 999,
+                "tagCategory": 999,
+                "id": 142,
+                "percentile": 86,
+                "score": 86
+              },
+              "541": {
+                "priority": 4,
+                "tagCategory": 4,
+                "id": 541
+              }
+            },
+            "rs555": true,
+            "isDirectBus": true,
+            "locationSearchParams": {
+              "isExactMatch": true,
+              "sourceBp": "Kilambakkam Bus Stand",
+              "destinationDp": "Nayanadahalli",
+              "bpId": 29653595,
+              "dpId": 29251687
+            },
+            "serviceNotes": {
+              "PETS": "1",
+              "CHILD": "1",
+              "LUG": "2,1"
+            },
+            "rdBoostInfo": {
+              "preBoostPos": 4,
+              "wtPrice": 1151.06,
+              "seatPrices": "939.0:4,1069.0:8,1169.0:8,1269.0:6,1369.0:3",
+              "compRids": "",
+              "compSids": "",
+              "boostDiscPer": 8.69
+            },
+            "inventoryTags": [
+              "OTG_ADDON"
+            ],
+            "fareDetailsBySeatType": {
+              "SLEEPER": [
+                {
+                  "originalPrice": 939,
+                  "discountedPrice": 839,
+                  "count": 26
+                }
+              ],
+              "SINGLE_SLEEPER": [
+                {
+                  "originalPrice": 1369,
+                  "discountedPrice": 1269,
+                  "count": 3
+                }
+              ]
+            }
+          },
+          {
+            "operatorId": 36790,
+            "travelsName": "Pranav Nandhan Roadlines",
+            "routeId": 52658523,
+            "busType": "A/C Sleeper (2+1)",
+            "busTypeId": 54,
+            "serviceName": "CHI - BGL Nit Ser2",
+            "serviceId": "SCH578F220L",
+            "cancellationPolicy": "0:4:100:0;4:8:50:0;8:12:20:0;12:-1:10:0",
+            "operatorLogoPath": "ind/logo/36790.png",
+            "totalRatings": 4.3,
+            "numberOfReviews": "15",
+            "departureTime": "2026-08-15 22:30:00",
+            "arrivalTime": "2026-08-16 07:10:00",
+            "journeyDurationMin": 520,
+            "firstBpTime": "2026-08-15 22:30:00",
+            "standardBpName": "Kilambakkam Bus Stand",
+            "standardBpIdentifier": 311163,
+            "standardDpName": "Marathahalli",
+            "standardDpIdentifier": 66316,
+            "doj": "2026-08-15",
+            "isSeatLayoutAvailable": true,
+            "fareList": [
+              850,
+              900,
+              950,
+              1050
+            ],
+            "busScore": 1.09,
+            "perzScore": 1.09,
+            "isLiveTrackingAvailable": true,
+            "isMticketEnabled": true,
+            "isAc": true,
+            "isSleeper": true,
+            "maxSeatsPerTransaction": 6,
+            "availableWindowSeats": 10,
+            "availableSingleSeats": 5,
+            "availableSeats": 17,
+            "totalSeats": 37,
+            "amenities": [
+              4,
+              5,
+              7,
+              9,
+              10,
+              26,
+              86,
+              19
+            ],
+            "operatorOfferCampaign": {
+              "Vld": true,
+              "CmpgList": [
+                {
+                  "RouteId": 52658523,
+                  "CampaignCode": "ALLC_90295e21",
+                  "CampaignDesc": "Get 5 % Extra OFF",
+                  "CampaignNote": "[\"Minimum ticket fare : INR 300\",\"Maximum discount limit : INR 99999\"]",
+                  "CampaignType": "PERCENT",
+                  "DiscountUnit": 5,
+                  "DiscountType": 2,
+                  "Discount": 42,
+                  "maxDiscount": 5,
+                  "DiscountedPrices": [
+                    808,
+                    855,
+                    903,
+                    998
+                  ],
+                  "OriginalPrices": [
+                    850,
+                    900,
+                    950,
+                    1050
+                  ],
+                  "SeatCount": 17,
+                  "icon": "REDDEAL",
+                  "displayText": "Exclusive",
+                  "dealType": "REDDEAL"
+                }
+              ]
+            },
+            "campaignType": [
+              86,
+              15
+            ],
+            "vendorCurrency": "INR",
+            "availableAisleSeats": 7,
+            "availableUpperSeats": 8,
+            "availableLowerSeats": 9,
+            "bpCount": 15,
+            "dpCount": 17,
+            "sponsoredAttribute": {
+              "trackingId": "PNG41MKZWMQ_dHJhY2tlcixTTCxsaW5lSXRlbUlkOzEyNDI4NixhZEl0ZW1JZDsyNjQ1MjksNjAwMzk0MTQ0",
+              "clickUrl": "https://adengine.redbus.com/ext/user/track?type=CLICK&trackingId=PNG41MKZWMQ_dHJhY2tlcixTTCxsaW5lSXRlbUlkOzEyNDI4NixhZEl0ZW1JZDsyNjQ1MjksNjAwMzk0MTQ0",
+              "viewUrl": "https://adengine.redbus.com/ext/user/track?type=VIEW&trackingId=PNG41MKZWMQ_dHJhY2tlcixTTCxsaW5lSXRlbUlkOzEyNDI4NixhZEl0ZW1JZDsyNjQ1MjksNjAwMzk0MTQ0"
+            },
+            "boReqParams": [
+              {
+                "reschedulePolicy": "",
+                "serviceStartTime": "2026-08-15 22:30:00"
+              }
+            ],
+            "busImageCount": -1,
+            "locationSearchParams": {
+              "isExactMatch": true,
+              "sourceBp": "Kilambakkam Bus Stand",
+              "destinationDp": "Majestic (Kempegowda Bus Station)",
+              "bpId": 29682988,
+              "dpId": 29683029
+            },
+            "serviceNotes": {
+              "PETS": "1",
+              "CHILD": "1",
+              "LUG": "2,1"
+            },
+            "rdBoostInfo": {
+              "preBoostPos": 175,
+              "wtPrice": 914.7,
+              "seatPrices": "850.0:6,900.0:6,950.0:2,1050.0:3",
+              "compRids": "",
+              "compSids": "",
+              "boostDiscPer": 5
+            },
+            "fareDetailsBySeatType": {
+              "SLEEPER": [
+                {
+                  "originalPrice": 850,
+                  "discountedPrice": 808,
+                  "count": 12
+                }
+              ],
+              "SINGLE_SLEEPER": [
+                {
+                  "originalPrice": 950,
+                  "discountedPrice": 903,
+                  "count": 5
+                }
+              ]
+            }
+          },
+          {
+            "operatorId": 25748,
+            "travelsName": "SST Limoliner",
+            "routeId": 34269786,
+            "busType": "Bharat Benz A/C Sleeper (2+1)",
+            "busTypeId": 1087,
+            "serviceName": "SST LIMOLINER",
+            "serviceId": "25",
+            "cancellationPolicy": "0:3:100:0;3:6:95:0;6:12:50:0;12:24:50:0;24:-1:15:0",
+            "isPartialCancellationAllowed": true,
+            "operatorLogoPath": "ind/logo/25748.png",
+            "totalRatings": 4.8,
+            "numberOfReviews": "1038",
+            "departureTime": "2026-08-15 23:00:00",
+            "arrivalTime": "2026-08-16 05:15:00",
+            "journeyDurationMin": 375,
+            "firstBpTime": "2026-08-15 23:00:00",
+            "standardBpName": "Koyambedu",
+            "standardBpIdentifier": 66065,
+            "standardDpName": "Madiwala",
+            "standardDpIdentifier": 66008,
+            "doj": "2026-08-15",
+            "isSeatLayoutAvailable": true,
+            "fareList": [
+              1774.89,
+              1996.89,
+              2329.89,
+              2440.89
+            ],
+            "busScore": 4.51,
+            "perzScore": 4.51,
+            "isLiveTrackingAvailable": true,
+            "isMticketEnabled": true,
+            "isAc": true,
+            "isSleeper": true,
+            "maxSeatsPerTransaction": 6,
+            "availableWindowSeats": 12,
+            "availableSingleSeats": 6,
+            "availableSeats": 22,
+            "totalSeats": 36,
+            "amenities": [
+              86,
+              4,
+              1,
+              5,
+              10,
+              7,
+              35,
+              9,
+              26,
+              19
+            ],
+            "operatorOfferCampaign": {
+              "Vld": true,
+              "RTVld": true,
+              "CmpgList": [
+                {
+                  "RouteId": 34269786,
+                  "CampaignCode": "ALLF_4d0a6a48",
+                  "CampaignDesc": "Get 11 % Extra OFF",
+                  "CampaignNote": "[\"Minimum ticket fare : INR 300\",\"Maximum discount limit : INR 99999\"]",
+                  "CampaignType": "PERCENT",
+                  "DiscountUnit": 10,
+                  "DiscountType": 2,
+                  "Discount": 177.89,
+                  "maxDiscount": 10.02,
+                  "DiscountedPrices": [
+                    1597,
+                    1797,
+                    2097,
+                    2197
+                  ],
+                  "OriginalPrices": [
+                    1774.89,
+                    1996.89,
+                    2329.89,
+                    2440.89
+                  ],
+                  "SeatCount": 22,
+                  "isLoggedIn": true,
+                  "RTODiscountType": 1,
+                  "RTOOffer": "10",
+                  "RTOType": 1,
+                  "RTODays": 15,
+                  "icon": "DISCOVERY",
+                  "IsFemaleOffer": true,
+                  "oType": 1,
+                  "displayText": "Try new",
+                  "dealType": "DISCOVERY",
+                  "redDealInfo": {
+                    "1": {
+                      "DiscountUnit": 10,
+                      "DiscountType": 2
+                    }
+                  }
+                }
+              ]
+            },
+            "isRescheduled": true,
+            "rescheduleTime": 7,
+            "campaignType": [
+              4,
+              37,
+              86,
+              7,
+              15
+            ],
+            "vendorCurrency": "INR",
+            "isFlexiOperator": true,
+            "availableAisleSeats": 8,
+            "availableUpperSeats": 11,
+            "availableLowerSeats": 11,
+            "bpCount": 31,
+            "dpCount": 26,
+            "manualReschedulePolicy": "7:-1:0:0",
+            "boReqParams": [
+              {
+                "isAvailReschedule": true,
+                "reschedulePolicy": "7:-1:0:0",
+                "serviceStartTime": "2026-08-15 23:00:00"
+              }
+            ],
+            "busImageCount": -1,
+            "persuasion": {
+              "537": {
+                "priority": 2,
+                "tagCategory": 2,
+                "id": 537
+              },
+              "541": {
+                "priority": 4,
+                "tagCategory": 4,
+                "id": 541
+              }
+            },
+            "locationSearchParams": {
+              "isExactMatch": true,
+              "sourceBp": "Kilambakkam Bus Stand",
+              "destinationDp": "Byatarayanapura",
+              "bpId": 24586904,
+              "dpId": 24464869
+            },
+            "serviceNotes": {
+              "PETS": "1",
+              "CHILD": "1",
+              "LUG": "3,2,1"
+            },
+            "rdBoostInfo": {
+              "preBoostPos": 5,
+              "wtPrice": 2022.11,
+              "seatPrices": "1774.89:8,1996.89:8,2329.89:3,2440.89:3",
+              "compRids": "",
+              "compSids": "",
+              "boostDiscPer": 10
+            },
+            "fareDetailsBySeatType": {
+              "SLEEPER": [
+                {
+                  "originalPrice": 1774.89,
+                  "discountedPrice": 1597,
+                  "count": 16
+                }
+              ],
+              "SINGLE_SLEEPER": [
+                {
+                  "originalPrice": 2329.89,
+                  "discountedPrice": 2097,
+                  "count": 6
+                }
+              ]
+            }
+          },
+          {
+            "operatorId": 27518,
+            "travelsName": "ACLS Navigator",
+            "routeId": 40550670,
+            "busType": "Volvo B11R Multi-Axle A/C Sleeper (2+1)",
+            "busTypeId": 1577,
+            "serviceName": "CHI - BGL NEW",
+            "serviceId": "SCH278B75N",
+            "cancellationPolicy": "0:4:90:0;4:8:50:0;8:12:25:0;12:-1:15:0",
+            "isPartialCancellationAllowed": true,
+            "operatorLogoPath": "ind/logo/27518.png",
+            "totalRatings": 4.3,
+            "numberOfReviews": "907",
+            "departureTime": "2026-08-15 23:15:00",
+            "arrivalTime": "2026-08-16 05:40:00",
+            "journeyDurationMin": 385,
+            "firstBpTime": "2026-08-15 23:00:00",
+            "standardBpName": "Koyambedu",
+            "standardBpIdentifier": 66065,
+            "standardDpName": "Madiwala",
+            "standardDpIdentifier": 66008,
+            "doj": "2026-08-15",
+            "isSeatLayoutAvailable": true,
+            "fareList": [
+              1529,
+              1629,
+              1729,
+              1829
+            ],
+            "busScore": 2.42,
+            "perzScore": 2.42,
+            "isLiveTrackingAvailable": true,
+            "isMticketEnabled": true,
+            "isAc": true,
+            "isSleeper": true,
+            "maxSeatsPerTransaction": 6,
+            "availableWindowSeats": 18,
+            "availableSingleSeats": 10,
+            "availableSeats": 26,
+            "totalSeats": 42,
+            "amenities": [
+              4,
+              5,
+              7,
+              9,
+              10,
+              26,
+              19
+            ],
+            "operatorOfferCampaign": {
+              "Vld": true,
+              "RTVld": true,
+              "CmpgList": [
+                {
+                  "RouteId": 40550670,
+                  "CampaignCode": "MULC_9d4b33d7",
+                  "CampaignDesc": "Get INR 100.0 Extra OFF",
+                  "CampaignNote": "[\"Minimum ticket fare : INR 130\",\"Maximum discount limit : INR 99999\"]",
+                  "CampaignType": "FLAT",
+                  "DiscountUnit": 100,
+                  "DiscountType": 1,
+                  "Discount": 100,
+                  "maxDiscount": 100,
+                  "DiscountedPrices": [
+                    1429,
+                    1529,
+                    1629,
+                    1729
+                  ],
+                  "OriginalPrices": [
+                    1529,
+                    1629,
+                    1729,
+                    1829
+                  ],
+                  "SeatCount": 26,
+                  "RTODiscountType": 1,
+                  "RTOOffer": "10",
+                  "RTOType": 1,
+                  "RTODays": 15,
+                  "icon": "REDDEAL",
+                  "oType": 1,
+                  "displayText": "Exclusive",
+                  "dealType": "REDDEAL",
+                  "groupSeatCount": 3,
+                  "redDealInfo": {
+                    "1": {
+                      "DiscountUnit": 10,
+                      "DiscountType": 2
+                    },
+                    "4": {
+                      "DiscountUnit": 10,
+                      "DiscountType": 2
+                    }
+                  }
+                }
+              ]
+            },
+            "campaignType": [
+              16,
+              86,
+              15
+            ],
+            "vendorCurrency": "INR",
+            "availableAisleSeats": 8,
+            "availableUpperSeats": 13,
+            "availableLowerSeats": 13,
+            "bpCount": 25,
+            "dpCount": 13,
+            "sponsoredAttribute": {
+              "trackingId": "PP5Z7Q22WM9_dHJhY2tlcixTTCxsaW5lSXRlbUlkOzEyMzY2OCxhZEl0ZW1JZDsyNjMzODEsMjYxNzQxNTI4",
+              "clickUrl": "https://adengine.redbus.com/ext/user/track?type=CLICK&trackingId=PP5Z7Q22WM9_dHJhY2tlcixTTCxsaW5lSXRlbUlkOzEyMzY2OCxhZEl0ZW1JZDsyNjMzODEsMjYxNzQxNTI4",
+              "viewUrl": "https://adengine.redbus.com/ext/user/track?type=VIEW&trackingId=PP5Z7Q22WM9_dHJhY2tlcixTTCxsaW5lSXRlbUlkOzEyMzY2OCxhZEl0ZW1JZDsyNjMzODEsMjYxNzQxNTI4"
+            },
+            "boReqParams": [
+              {
+                "reschedulePolicy": "",
+                "serviceStartTime": "2026-08-15 23:00:00"
+              }
+            ],
+            "busImageCount": -1,
+            "viaRt": "Direct Bus",
+            "persuasion": {
+              "142": {
+                "priority": 999,
+                "tagCategory": 999,
+                "id": 142,
+                "percentile": 90,
+                "score": 90
+              },
+              "610": {
+                "priority": 999,
+                "tagCategory": 999,
+                "id": 610
+              }
+            },
+            "isDirectBus": true,
+            "locationSearchParams": {
+              "isExactMatch": true,
+              "sourceBp": "Padur",
+              "destinationDp": "Kalasipalyam (KR Market)",
+              "bpId": 24515785,
+              "dpId": 25328414
+            },
+            "serviceNotes": {
+              "PETS": "1",
+              "CHILD": "1",
+              "LUG": "2,1"
+            },
+            "rdBoostInfo": {
+              "preBoostPos": 123,
+              "wtPrice": 1655.92,
+              "seatPrices": "1529.0:8,1629.0:8,1729.0:5,1829.0:5",
+              "compRids": "",
+              "compSids": "",
+              "boostDiscPer": 6.04
+            },
+            "isPremium": true,
+            "fareDetailsBySeatType": {
+              "SLEEPER": [
+                {
+                  "originalPrice": 1529,
+                  "discountedPrice": 1429,
+                  "count": 16
+                }
+              ],
+              "SINGLE_SLEEPER": [
+                {
+                  "originalPrice": 1729,
+                  "discountedPrice": 1629,
+                  "count": 10
+                }
+              ]
+            }
+          },
+          {
+            "operatorId": 26086,
+            "travelsName": "FRESHBUS",
+            "routeId": 44424893,
+            "busType": "Electric A/C Seater/Sleeper (2+1)",
+            "busTypeId": 1944,
+            "serviceName": "Chennai  To Bangalore 20:00",
+            "serviceId": "508",
+            "cancellationPolicy": "0:06:100:0;06:12:50:0;12:24:20:0;24:-1:15:0",
+            "isPartialCancellationAllowed": true,
+            "operatorLogoPath": "ind/logo/26086.png",
+            "totalRatings": 4.8,
+            "numberOfReviews": "1004",
+            "departureTime": "2026-08-15 23:05:00",
+            "arrivalTime": "2026-08-16 06:35:00",
+            "journeyDurationMin": 450,
+            "firstBpTime": "2026-08-15 20:00:00",
+            "standardBpName": "Poonamallee",
+            "standardBpIdentifier": 74198,
+            "standardDpName": "Tin Factory",
+            "standardDpIdentifier": 91627,
+            "doj": "2026-08-15",
+            "isSeatLayoutAvailable": true,
+            "fareList": [
+              1462,
+              1536,
+              1609,
+              1757,
+              2431,
+              2673,
+              2915,
+              3399,
+              3641
+            ],
+            "busScore": 4.5,
+            "perzScore": 4.5,
+            "isLiveTrackingAvailable": true,
+            "isMticketEnabled": true,
+            "isAc": true,
+            "isSeater": true,
+            "isSleeper": true,
+            "maxSeatsPerTransaction": 6,
+            "availableWindowSeats": 23,
+            "availableSingleSeats": 10,
+            "availableSeats": 39,
+            "totalSeats": 43,
+            "amenities": [
+              4,
+              5,
+              6,
+              7,
+              9,
+              26,
+              10,
+              19
+            ],
+            "operatorOfferCampaign": {
+              "RTVld": true,
+              "CmpgList": [
+                {
+                  "RTODiscountType": 1,
+                  "RTOOffer": "15",
+                  "RTOType": 1,
+                  "RTODays": 15,
+                  "oType": 1,
+                  "redDealInfo": {
+                    "1": {
+                      "DiscountUnit": 15,
+                      "DiscountType": 2
+                    }
+                  }
+                }
+              ]
+            },
+            "campaignType": [
+              86
+            ],
+            "vendorCurrency": "INR",
+            "availableAisleSeats": 14,
+            "availableUpperSeats": 15,
+            "availableLowerSeats": 24,
+            "bpCount": 16,
+            "dpCount": 13,
+            "isElectricVehicle": true,
+            "boReqParams": [
+              {}
+            ],
+            "busImageCount": -1,
+            "viaRt": "Direct Bus",
+            "persuasion": {
+              "4366": {
+                "priority": 999,
+                "tagCategory": 999,
+                "id": 4366
+              }
+            },
+            "isDirectBus": true,
+            "locationSearchParams": {
+              "isExactMatch": true,
+              "sourceBp": "SIPCOT Siruseri",
+              "destinationDp": "Nayanadahalli",
+              "bpId": 27901429,
+              "dpId": 23870692
+            },
+            "serviceNotes": {
+              "PETS": "1",
+              "CHILD": "1",
+              "LUG": "2,1"
+            },
+            "rdBoostInfo": {
+              "preBoostPos": 6,
+              "wtPrice": 2369.58,
+              "seatPrices": "1462.0:1,1536.0:6,1609.0:7,1757.0:5,2431.0:2,2673.0:4,2915.0:5,3399.0:5,3641.0:4",
+              "compRids": "",
+              "compSids": ""
+            },
+            "fareDetailsBySeatType": {
+              "SEATER": [
+                {
+                  "originalPrice": 1462,
+                  "count": 19
+                }
+              ],
+              "SLEEPER": [
+                {
+                  "originalPrice": 2431,
+                  "count": 11
+                }
+              ],
+              "SINGLE_SLEEPER": [
+                {
+                  "originalPrice": 3399,
+                  "count": 9
+                }
+              ]
+            }
+          },
+          {
+            "operatorId": 35668,
+            "travelsName": "SRI SAI TRAVELS",
+            "routeId": 51995298,
+            "busType": "A/C Seater / Sleeper (2+1)",
+            "busTypeId": 4,
+            "serviceName": "35127",
+            "serviceId": "32-0815PM-32",
+            "cancellationPolicy": "0:4:100:0;4:8:50:0;8:12:15:0;12:-1:10:0",
+            "isPartialCancellationAllowed": true,
+            "operatorLogoPath": "ind/logo/35668.png",
+            "totalRatings": 4.8,
+            "numberOfReviews": "687",
+            "departureTime": "2026-08-15 20:50:00",
+            "arrivalTime": "2026-08-16 05:00:00",
+            "journeyDurationMin": 490,
+            "firstBpTime": "2026-08-15 20:15:00",
+            "standardBpName": "Kelambakkam",
+            "standardBpIdentifier": 80277,
+            "standardDpName": "Attibele",
+            "standardDpIdentifier": 67971,
+            "doj": "2026-08-15",
+            "isSeatLayoutAvailable": true,
+            "fareList": [
+              611,
+              1022,
+              1222,
+              1333
+            ],
+            "busScore": 4.29,
+            "perzScore": 4.29,
+            "isLiveTrackingAvailable": true,
+            "isMticketEnabled": true,
+            "isAc": true,
+            "isSeater": true,
+            "isSleeper": true,
+            "maxSeatsPerTransaction": 6,
+            "availableWindowSeats": 23,
+            "availableSingleSeats": 10,
+            "availableSeats": 41,
+            "totalSeats": 48,
+            "amenities": [
+              5,
+              6,
+              7,
+              10,
+              26,
+              86,
+              9,
+              4,
+              19
+            ],
+            "operatorOfferCampaign": {
+              "Vld": true,
+              "CmpgList": [
+                {
+                  "RouteId": 51995298,
+                  "CampaignCode": "MULC_ba36506d",
+                  "CampaignDesc": "Get 10 % Extra OFF",
+                  "CampaignNote": "[\"Minimum ticket fare : INR 300\",\"Maximum discount limit : INR 99999\"]",
+                  "CampaignType": "PERCENT",
+                  "DiscountUnit": 10,
+                  "DiscountType": 2,
+                  "Discount": 61,
+                  "maxDiscount": 10,
+                  "DiscountedPrices": [
+                    550,
+                    920,
+                    1100,
+                    1200
+                  ],
+                  "OriginalPrices": [
+                    611,
+                    1022,
+                    1222,
+                    1333
+                  ],
+                  "SeatCount": 41,
+                  "icon": "REDDEAL",
+                  "displayText": "Exclusive",
+                  "dealType": "REDDEAL"
+                }
+              ]
+            },
+            "isRescheduled": true,
+            "rescheduleTime": 12,
+            "campaignType": [
+              86,
+              15
+            ],
+            "vendorCurrency": "INR",
+            "availableAisleSeats": 16,
+            "availableUpperSeats": 14,
+            "availableLowerSeats": 27,
+            "bpCount": 37,
+            "dpCount": 13,
+            "boReqParams": [
+              {
+                "isAvailReschedule": true,
+                "reschedulePolicy": "12:-1:0:0",
+                "serviceStartTime": "2026-08-15 20:15:00"
+              }
+            ],
+            "busImageCount": -1,
+            "persuasion": {
+              "142": {
+                "priority": 999,
+                "tagCategory": 999,
+                "id": 142,
+                "percentile": 86,
+                "score": 86
+              }
+            },
+            "locationSearchParams": {
+              "isExactMatch": true,
+              "sourceBp": "Kelambakkam",
+              "destinationDp": "Kalasipalyam (KR Market)",
+              "bpId": 29868532,
+              "dpId": 29716243
+            },
+            "serviceNotes": {
+              "PETS": "1",
+              "CHILD": "1",
+              "LUG": "3,2,1"
+            },
+            "rdBoostInfo": {
+              "preBoostPos": 11,
+              "isBoosted": true,
+              "wtPrice": 863.78,
+              "seatPrices": "611.0:22,1022.0:9,1222.0:5,1333.0:5",
+              "compRids": "",
+              "compSids": "",
+              "boostDiscPer": 10
+            },
+            "fareDetailsBySeatType": {
+              "SEATER": [
+                {
+                  "originalPrice": 611,
+                  "discountedPrice": 550,
+                  "count": 22
+                }
+              ],
+              "SLEEPER": [
+                {
+                  "originalPrice": 1022,
+                  "discountedPrice": 920,
+                  "count": 9
+                }
+              ],
+              "SINGLE_SLEEPER": [
+                {
+                  "originalPrice": 1222,
+                  "discountedPrice": 1100,
+                  "count": 10
+                }
+              ]
+            }
+          }
+        ],
+        "parentSrcCityName": "Chennai",
+        "parentDstCityName": "Bengaluru",
+        "parentSrcCityId": 123,
+        "parentDstCityId": 122,
+        "srcCountry": "INDIA",
+        "dstCountry": "INDIA",
+        "sortLabel": "BUSSCORE",
+        "uuidAtSRP": "e8b3fc98a8b642a6985a42add098b83b",
+        "busCounts": {
+          "total": 216,
+          "privateCount": 216
+        },
+        "trainData": {
+          "sourceStationCode": null,
+          "avlTrnCount": 0,
+          "dstStationName": null,
+          "errorMessage": "Unified SRP bus route enquiry is disabled after configured AP threshold",
+          "dstStationCode": null,
+          "sourceStationName": null
+        },
+        "srcRegion": "Tamil Nadu",
+        "desRegion": "Karnataka"
+      },
+      "statusCode": 200,
+      "headers": {
+        "date": "Mon, 03 Aug 2026 18:58:05 GMT",
+        "content-type": "application/json",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "server": "nginx",
+        "access-control-allow-origin": "https://www.redbus.in",
+        "access-control-allow-methods": "GET, POST, OPTIONS",
+        "access-control-allow-headers": "Content-Type, Authorization",
+        "access-control-allow-credentials": "true"
+      }
+    },
+    "parseError": null
+  }
+}

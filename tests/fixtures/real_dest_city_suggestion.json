@@ -1,0 +1,138 @@
+{
+  "request_url": "https://www.redbus.in/rpw/api/citySuggestion?search=Bangalore&limit=10&routeDetection=false",
+  "result": {
+    "ok": true,
+    "status": 200,
+    "contentType": "application/json; charset=utf-8",
+    "rawTextLength": 2126,
+    "rawTextSnippet": "{\"responseHeader\":{\"status\":0,\"QTime\":0,\"params\":{\"indent\":\"true\",\"fl\":\"ID,Name,rank,cc,locationType,parentLocation,locationName,parentLocationName,region\",\"group.limit\":\"20\",\"sort\":\"rank desc,score desc\",\"fq\":\"((cc:IND OR cc:NPL) AND NOT locationType: TERMINAL AND -ID:(122) AND !locationType:STATE )\",\"rows\":\"20\",\"q\":\"bangalore\",\"defType\":\"edismax\",\"qf\":\"name_ngram^10 parentName_ngram^5\",\"json\":\"\",\"wt\":\"json\",\"group.field\":\"isPackageCity\",\"group\":\"true\"}},\"response\":{\"numFound\":6,\"docs\":[{\"ID\":1",
+    "parsed": {
+      "responseHeader": {
+        "status": 0,
+        "QTime": 0,
+        "params": {
+          "indent": "true",
+          "fl": "ID,Name,rank,cc,locationType,parentLocation,locationName,parentLocationName,region",
+          "group.limit": "20",
+          "sort": "rank desc,score desc",
+          "fq": "((cc:IND OR cc:NPL) AND NOT locationType: TERMINAL AND -ID:(122) AND !locationType:STATE )",
+          "rows": "20",
+          "q": "bangalore",
+          "defType": "edismax",
+          "qf": "name_ngram^10 parentName_ngram^5",
+          "json": "",
+          "wt": "json",
+          "group.field": "isPackageCity",
+          "group": "true"
+        }
+      },
+      "response": {
+        "numFound": 6,
+        "docs": [
+          {
+            "ID": 122,
+            "locationType": "CITY",
+            "parentLocation": 4,
+            "cc": "IND",
+            "rank": 99081,
+            "locationName": "Bengaluru",
+            "region": "Karnataka",
+            "Name": "Bengaluru",
+            "BpList": [
+              {
+                "parentLocationName": "Bengaluru",
+                "parentLocation": 122,
+                "locationType": "AREA",
+                "locationName": "Devanahalli Toll Plaza, Bengaluru",
+                "cc": "IND",
+                "Name": "Devanahalli Toll Plaza, Bengaluru, Bengaluru",
+                "ID": 253415,
+                "rank": 0,
+                "region": ""
+              }
+            ]
+          },
+          {
+            "ID": 1304,
+            "locationType": "CITY",
+            "parentLocation": 4,
+            "cc": "IND",
+            "rank": 543,
+            "locationName": "Bengaluru Airport Intl",
+            "region": "Karnataka",
+            "Name": "Bengaluru Airport Intl",
+            "BpList": []
+          },
+          {
+            "ID": 78517,
+            "locationType": "CITY",
+            "parentLocation": 4,
+            "cc": "IND",
+            "rank": 233,
+            "locationName": "Bengaluru Sight Seeing",
+            "region": "Karnataka",
+            "Name": "Bengaluru Sight Seeing",
+            "BpList": []
+          },
+          {
+            "ID": 95222,
+            "locationType": "CITY",
+            "cc": "IND",
+            "rank": 2793,
+            "locationName": "Mangalore",
+            "region": "Karnataka",
+            "Name": "Mangalore",
+            "BpList": [
+              {
+                "parentLocationName": "Mangaluru",
+                "parentLocation": 95222,
+                "locationType": "AREA",
+                "locationName": "Kuntikana, Mangalore",
+                "cc": "IND",
+                "Name": "Kuntikana, Mangalore, Mangaluru",
+                "ID": 307281,
+                "rank": 0,
+                "region": ""
+              },
+              {
+                "parentLocationName": "Mangaluru",
+                "parentLocation": 95222,
+                "locationType": "AREA",
+                "locationName": "Attavar,Mangalore",
+                "cc": "IND",
+                "Name": "Attavar,Mangalore, Mangaluru",
+                "ID": 307284,
+                "rank": 0,
+                "region": ""
+              }
+            ]
+          },
+          {
+            "ID": 71819,
+            "locationType": "CITY",
+            "parentLocation": 4,
+            "cc": "IND",
+            "rank": 167,
+            "locationName": "Mangalore Bypass",
+            "region": "Karnataka",
+            "Name": "Mangalore Bypass",
+            "BpList": []
+          },
+          {
+            "ID": 202095,
+            "locationType": "CITY",
+            "parentLocation": 4,
+            "cc": "IND",
+            "rank": 52,
+            "locationName": "Mangalore Airport",
+            "region": "Karnataka",
+            "Name": "Mangalore Airport",
+            "BpList": []
+          }
+        ]
+      },
+      "state": "TN"
+    },
+    "parseError": null
+  }
+}

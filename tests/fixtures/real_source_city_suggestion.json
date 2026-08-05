@@ -1,0 +1,149 @@
+{
+  "request_url": "https://www.redbus.in/rpw/api/citySuggestion?search=Chennai&limit=10&routeDetection=false",
+  "result": {
+    "ok": true,
+    "status": 200,
+    "contentType": "application/json; charset=utf-8",
+    "rawTextLength": 2283,
+    "rawTextSnippet": "{\"responseHeader\":{\"status\":0,\"QTime\":0,\"params\":{\"indent\":\"true\",\"fl\":\"ID,Name,rank,cc,locationType,parentLocation,locationName,parentLocationName,region\",\"group.limit\":\"20\",\"sort\":\"rank desc,score desc\",\"fq\":\"((cc:IND OR cc:NPL) AND NOT locationType: TERMINAL AND -ID:(123) AND !locationType:STATE )\",\"rows\":\"20\",\"q\":\"chennai\",\"defType\":\"edismax\",\"qf\":\"name_ngram^10 parentName_ngram^5\",\"json\":\"\",\"wt\":\"json\",\"group.field\":\"isPackageCity\",\"group\":\"true\"}},\"response\":{\"numFound\":1,\"docs\":[{\"ID\":123",
+    "parsed": {
+      "responseHeader": {
+        "status": 0,
+        "QTime": 0,
+        "params": {
+          "indent": "true",
+          "fl": "ID,Name,rank,cc,locationType,parentLocation,locationName,parentLocationName,region",
+          "group.limit": "20",
+          "sort": "rank desc,score desc",
+          "fq": "((cc:IND OR cc:NPL) AND NOT locationType: TERMINAL AND -ID:(123) AND !locationType:STATE )",
+          "rows": "20",
+          "q": "chennai",
+          "defType": "edismax",
+          "qf": "name_ngram^10 parentName_ngram^5",
+          "json": "",
+          "wt": "json",
+          "group.field": "isPackageCity",
+          "group": "true"
+        }
+      },
+      "response": {
+        "numFound": 1,
+        "docs": [
+          {
+            "ID": 123,
+            "locationType": "CITY",
+            "parentLocation": 14,
+            "cc": "IND",
+            "rank": 147502,
+            "locationName": "Chennai (All Locations)",
+            "region": "Tamil Nadu",
+            "Name": "Chennai",
+            "BpList": [
+              {
+                "parentLocationName": "Chennai",
+                "parentLocation": 123,
+                "locationType": "AREA",
+                "locationName": "Koyambedu",
+                "cc": "IND",
+                "Name": "Koyambedu, Chennai",
+                "ID": 66065,
+                "rank": 55562,
+                "region": ""
+              },
+              {
+                "parentLocationName": "Chennai",
+                "parentLocation": 123,
+                "locationType": "AREA",
+                "locationName": "Tambaram",
+                "cc": "IND",
+                "Name": "Tambaram, Chennai",
+                "ID": 84274,
+                "rank": 21385,
+                "region": ""
+              },
+              {
+                "cc": "IND",
+                "parentLocation": 123,
+                "locationName": "CMBT, Chennai",
+                "locationType": "AREA",
+                "Name": "CMBT, Chennai, Chennai",
+                "parentLocationName": "Chennai",
+                "ID": 66065,
+                "rank": 10000,
+                "region": ""
+              },
+              {
+                "parentLocationName": "Chennai",
+                "parentLocation": 123,
+                "locationType": "AREA",
+                "locationName": "Sholinganallur",
+                "cc": "IND",
+                "Name": "Sholinganallur, Chennai",
+                "ID": 80281,
+                "rank": 7113,
+                "region": ""
+              },
+              {
+                "parentLocationName": "Chennai",
+                "parentLocation": 123,
+                "locationType": "AREA",
+                "locationName": "Egmore",
+                "cc": "IND",
+                "Name": "Egmore, Chennai",
+                "ID": 66298,
+                "rank": 5725,
+                "region": ""
+              },
+              {
+                "parentLocationName": "Chennai",
+                "parentLocation": 123,
+                "locationType": "AREA",
+                "locationName": "Ashok Pillar",
+                "cc": "IND",
+                "Name": "Ashok Pillar, Chennai",
+                "ID": 66461,
+                "rank": 3405,
+                "region": ""
+              },
+              {
+                "parentLocationName": "Chennai",
+                "parentLocation": 123,
+                "locationType": "AREA",
+                "locationName": "Chrompet",
+                "cc": "IND",
+                "Name": "Chrompet, Chennai",
+                "ID": 66463,
+                "rank": 3085,
+                "region": ""
+              },
+              {
+                "parentLocationName": "Chennai",
+                "parentLocation": 123,
+                "locationType": "AREA",
+                "locationName": "Madhavaram",
+                "cc": "IND",
+                "Name": "Madhavaram, Chennai",
+                "ID": 75211,
+                "rank": 2632,
+                "region": ""
+              },
+              {
+                "parentLocationName": "Chennai",
+                "parentLocation": 123,
+                "locationType": "AREA",
+                "locationName": "Alandur",
+                "cc": "IND",
+                "Name": "Alandur, Chennai",
+                "ID": 66487,
+                "rank": 2043,
+                "region": ""
+              }
+            ]
+          }
+        ]
+      },
+      "state": "TN"
+    },
+    "parseError": null
+  }
+}

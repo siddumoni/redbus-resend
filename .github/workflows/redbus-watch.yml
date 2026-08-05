@@ -1,0 +1,61 @@
+name: RedBus Availability Watcher
+
+on:
+  schedule:
+    # Every 15 minutes. Adjust cautiously - RedBus may rate-limit/block
+    # aggressive polling. Start conservative and tighten only if stable.
+    - cron: "*/15 * * * *"
+  workflow_dispatch: {}  # allows manual "Run workflow" button for testing
+
+permissions:
+  contents: write  # needed to commit state.json back to the repo
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Cache pip packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: pip-${{ runner.os }}-${{ hashFiles('requirements.txt') }}
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
+        id: playwright-cache
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('requirements.txt') }}
+
+      - name: Install Playwright Chromium
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
+        run: python -m playwright install --with-deps chromium
+
+      - name: Run watcher
+        env:
+          REDBUS_WATCHES: ${{ secrets.REDBUS_WATCHES }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          RESEND_FROM: ${{ secrets.RESEND_FROM }}
+          RESEND_TO: ${{ secrets.RESEND_TO }}
+          REDBUS_FAIL_THRESHOLD: "3"
+        run: python -m redbus_watch.main
+
+      - name: Commit updated state
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add state.json
+          git diff --quiet --cached || git commit -m "Update state.json [skip ci]"
+          git push
