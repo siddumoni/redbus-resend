@@ -489,7 +489,7 @@
         "total_seats": 49
       }
     },
-    "last_success_ts": "2026-08-06T04:27:59.941256+00:00",
+    "last_success_ts": "2026-08-06T04:30:02.602273+00:00",
     "watch_id": "bus:chennai:coimbatore:2026-08-19:city,snb"
   },
   "bus:chennai:coimbatore:2026-08-21:city,snb": {
@@ -705,7 +705,7 @@
         "total_seats": 49
       }
     },
-    "last_success_ts": "2026-08-06T04:27:59.941256+00:00",
+    "last_success_ts": "2026-08-06T04:30:02.602273+00:00",
     "watch_id": "bus:chennai:coimbatore:2026-08-21:city,snb"
   },
   "bus:chennai:coimbatore:2026-11-25:flix,mettur": {
