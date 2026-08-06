@@ -708,6 +708,66 @@
     "last_success_ts": "2026-08-06T04:30:02.602273+00:00",
     "watch_id": "bus:chennai:coimbatore:2026-08-21:city,snb"
   },
+  "bus:chennai:coimbatore:2026-09-05:a1,mettur": {
+    "consecutive_failures": 0,
+    "last_alert_ts": null,
+    "last_snapshots": {
+      "SCH1B88454H_2026-09-05 21:15:00": {
+        "arrival_time": "07:25",
+        "available": 32,
+        "bus_type": "Bharat Benz NON A/C sleeper (2+1)",
+        "departure_time": "21:15",
+        "duration_min": 610,
+        "operator": "A1 Travels",
+        "price": 1200,
+        "rating": 4,
+        "reviews": 466,
+        "single_seats": 9,
+        "total_seats": 37
+      },
+      "SCH268D611K_2026-09-05 20:30:00": {
+        "arrival_time": "06:30",
+        "available": 38,
+        "bus_type": "Bharat Benz A/C Seater /Sleeper (2+1)",
+        "departure_time": "20:30",
+        "duration_min": 600,
+        "operator": "A1 Travels",
+        "price": 850,
+        "rating": 4.1,
+        "reviews": 607,
+        "single_seats": 15,
+        "total_seats": 43
+      },
+      "SCH48842810J_2026-09-05 21:00:00": {
+        "arrival_time": "06:30",
+        "available": 38,
+        "bus_type": "NON AC Seater / Sleeper 2+1",
+        "departure_time": "21:00",
+        "duration_min": 570,
+        "operator": "A1 Travels",
+        "price": 800,
+        "rating": 4.5,
+        "reviews": 568,
+        "single_seats": null,
+        "total_seats": 43
+      },
+      "SCH4A8E2718J_2026-09-05 21:00:00": {
+        "arrival_time": "07:00",
+        "available": 38,
+        "bus_type": "Bharat Benz A/C Seater /Sleeper (2+1)",
+        "departure_time": "21:00",
+        "duration_min": 600,
+        "operator": "A1 Travels",
+        "price": 999,
+        "rating": 4.3,
+        "reviews": 618,
+        "single_seats": 15,
+        "total_seats": 43
+      }
+    },
+    "last_success_ts": "2026-08-06T04:33:57.711434+00:00",
+    "watch_id": "bus:chennai:coimbatore:2026-09-05:a1,mettur"
+  },
   "bus:chennai:coimbatore:2026-11-25:flix,mettur": {
     "consecutive_failures": 0,
     "last_alert_ts": null,
