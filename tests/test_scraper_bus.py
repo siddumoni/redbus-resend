@@ -68,7 +68,60 @@ def test_parse_real_bus_search_response_returns_snapshots():
     assert bus["available"] == 24
     assert bus["price"] == 1190  # min of fareList [1190, 1240, 1290, 1590, 1690]
     assert bus["departure_time"] == "23:00"  # formatted from "2026-08-15 23:00:00"
-    assert bus["arrival_time"] == "05:50 (+1d)"  # real data: arrives next calendar day
+    assert bus["arrival_time"] == "05:50"  # no day-offset suffix (removed per user preference)
+    assert bus["total_seats"] == 37
+    assert bus["single_seats"] == 7
+    assert bus["duration_min"] == 410
+    assert bus["rating"] == 4.9
+    assert bus["reviews"] == 1232
+
+
+def test_reviews_field_normalized_from_string_to_int():
+    """Real RedBus data returns numberOfReviews as a string (e.g. "1232"),
+    not an int - must be normalized so the email template can format it."""
+    fixture = {
+        "ok": True,
+        "parsed": {"success": True, "data": {"inventories": [{
+            "serviceId": "S1", "travelsName": "Test Line", "busType": "Seater",
+            "availableSeats": 5, "fareList": [500], "totalRatings": 4.5,
+            "numberOfReviews": "999",
+            "departureTime": "2026-08-15 08:00:00", "arrivalTime": "2026-08-15 14:00:00",
+        }]}},
+    }
+    snapshots = parse_bus_search_response(fixture)
+    bus = list(snapshots.values())[0]
+    assert bus["reviews"] == 999
+    assert isinstance(bus["reviews"], int)
+
+
+def test_missing_rating_fields_handled_gracefully():
+    fixture = {
+        "ok": True,
+        "parsed": {"success": True, "data": {"inventories": [{
+            "serviceId": "S1", "travelsName": "Test Line", "busType": "Seater",
+            "availableSeats": 5, "fareList": [500],
+            "departureTime": "2026-08-15 08:00:00", "arrivalTime": "2026-08-15 14:00:00",
+        }]}},
+    }
+    snapshots = parse_bus_search_response(fixture)
+    bus = list(snapshots.values())[0]
+    assert bus["rating"] is None
+    assert bus["reviews"] is None
+
+
+def test_duration_falls_back_to_computed_value_when_field_missing():
+    fixture = {
+        "ok": True,
+        "parsed": {"success": True, "data": {"inventories": [{
+            "serviceId": "S1", "travelsName": "Test Line", "busType": "Seater",
+            "availableSeats": 5, "fareList": [500],
+            "departureTime": "2026-08-15 08:00:00", "arrivalTime": "2026-08-15 14:30:00",
+            # no journeyDurationMin field at all
+        }]}},
+    }
+    snapshots = parse_bus_search_response(fixture)
+    bus = list(snapshots.values())[0]
+    assert bus["duration_min"] == 390  # 6.5 hours, computed from timestamps
 
 
 def test_arrival_time_same_day_has_no_day_offset_suffix():

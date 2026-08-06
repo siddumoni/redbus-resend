@@ -44,10 +44,6 @@ USER_AGENT = (
     "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
 )
 
-# --disable-http2: works around net::ERR_HTTP2_PROTOCOL_ERROR seen against
-# redbus.in in headless mode - some sites' edge/WAF layer resets the
-# connection when headless Chromium's HTTP/2 handshake looks slightly
-# different from a real browser's. Forcing HTTP/1.1 sidesteps that.
 # --disable-blink-features=AutomationControlled: hides the most common
 # headless-detection signal (navigator.webdriver).
 # --no-sandbox / --disable-dev-shm-usage: standard fixes for headless
@@ -59,7 +55,6 @@ USER_AGENT = (
 # doesn't always play well with Chromium's internal resolver. This flag
 # forces Chromium to use the system resolver instead of its own.
 BROWSER_LAUNCH_ARGS = [
-    "--disable-http2",
     "--disable-blink-features=AutomationControlled",
     "--no-sandbox",
     "--disable-dev-shm-usage",
@@ -237,22 +232,43 @@ def parse_bus_search_response(
             departure_display = departure_raw
 
         try:
-            arrival_dt = datetime.strptime(arrival_raw, "%Y-%m-%d %H:%M:%S")
-            arrival_display = arrival_dt.strftime("%H:%M")
-            if departure_dt is not None:
-                day_diff = (arrival_dt.date() - departure_dt.date()).days
-                if day_diff > 0:
-                    arrival_display += f" (+{day_diff}d)"
+            arrival_display = datetime.strptime(arrival_raw, "%Y-%m-%d %H:%M:%S").strftime("%H:%M")
         except ValueError:
             arrival_display = arrival_raw
+
+        # journeyDurationMin comes straight from RedBus's own data - more
+        # reliable than computing it ourselves from departure/arrival diff
+        # (which would be wrong for e.g. day-boundary edge cases if either
+        # timestamp were ever malformed). Fall back to a computed value
+        # only if the field is missing.
+        duration_min = inv.get("journeyDurationMin")
+        if duration_min is None and departure_dt is not None:
+            try:
+                arrival_dt = datetime.strptime(arrival_raw, "%Y-%m-%d %H:%M:%S")
+                duration_min = int((arrival_dt - departure_dt).total_seconds() // 60)
+            except ValueError:
+                duration_min = None
+
+        # numberOfReviews comes back as a string in real data (e.g. "1232") -
+        # normalize to int, falling back to None if it's not parseable.
+        reviews_raw = inv.get("numberOfReviews")
+        try:
+            reviews = int(reviews_raw) if reviews_raw is not None else None
+        except (ValueError, TypeError):
+            reviews = None
 
         rows.append((sort_price, key, {
             "operator": inv.get("travelsName", "Unknown operator"),
             "bus_type": inv.get("busType", ""),
             "available": inv.get("availableSeats", 0),
+            "total_seats": inv.get("totalSeats"),
+            "single_seats": inv.get("availableSingleSeats"),
             "price": price,
             "departure_time": departure_display,
             "arrival_time": arrival_display,
+            "duration_min": duration_min,
+            "rating": inv.get("totalRatings"),
+            "reviews": reviews,
         }))
 
     rows.sort(key=lambda r: r[0])
@@ -317,6 +333,18 @@ def fetch_bus_availability(
     PAGE_SIZE_CAP = 30  # safety cap: up to ~300 buses (30 pages x ~10/page) per watch per run
 
     launch_args = list(BROWSER_LAUNCH_ARGS)
+
+    # --disable-http2 fixed a real net::ERR_HTTP2_PROTOCOL_ERROR seen on
+    # one WSL2 setup, but it's opt-in (not default) because forcing
+    # HTTP/1.1 makes the browser look LESS like a real Chrome session
+    # (real Chrome always negotiates HTTP/2) - on a site actively running
+    # Akamai Bot Manager fingerprinting (confirmed via _abck/bm_sz cookies
+    # in response headers), that's a bad trade almost everywhere except
+    # the specific WSL setup that needed it. Set REDBUS_DISABLE_HTTP2=true
+    # only if you hit that exact error again.
+    if os.environ.get("REDBUS_DISABLE_HTTP2", "").strip().lower() == "true":
+        launch_args.append("--disable-http2")
+
     try:
         # Belt-and-suspenders on top of --disable-features=AsyncDns: resolve
         # the hostname ourselves via Python's socket module (confirmed

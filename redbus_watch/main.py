@@ -74,6 +74,7 @@ def run_once(
         "emailed_watches": [...watch_ids...],
         "failed_watches": [...watch_ids...],
         "failure_alerts_sent": [...watch_ids...],
+        "digest_send_failed": bool,
         "errors": {watch_id: error_message},
       }
     """
@@ -82,6 +83,7 @@ def run_once(
         "emailed_watches": [],
         "failed_watches": [],
         "failure_alerts_sent": [],
+        "digest_send_failed": False,
         "errors": {},
     }
 
@@ -137,7 +139,19 @@ def run_once(
             f"{'es' if route_count != 1 else ''}!"
         )
         html = build_digest_email(digest_sections)
-        send_email_fn(subject, html)
+        try:
+            send_email_fn(subject, html)
+        except Exception as e:
+            # Previously this exception would propagate uncaught, crashing
+            # the whole run BEFORE state.json got saved and BEFORE the run
+            # summary got printed - meaning a Resend failure here could go
+            # completely unnoticed (or worse, look like nothing happened).
+            # Now it's captured explicitly, watches are NOT marked as
+            # emailed if the send actually failed, and the run can still
+            # finish cleanly (state still gets saved).
+            summary["digest_send_failed"] = True
+            summary["errors"]["digest_send"] = str(e)
+            summary["emailed_watches"] = []
 
     return summary
 
@@ -175,6 +189,11 @@ def main():
     save_state(states, state_path)
 
     print(f"Run summary: {summary}")
+    if summary["digest_send_failed"]:
+        # A watch had new availability but the email genuinely failed to
+        # send - this is worth failing the Actions run loudly for, not
+        # letting it look like a normal successful (if quiet) run.
+        sys.exit(1)
     if summary["failed_watches"] and not summary["emailed_watches"]:
         # Non-zero exit if literally everything failed, so the Actions run is visibly red
         if len(summary["failed_watches"]) == len(watches):

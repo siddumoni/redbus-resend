@@ -280,3 +280,50 @@ def test_no_new_email_when_available_bus_just_loses_seats_but_stays_available():
 
     run_once(watches, states, fetch_run_2, lambda *a, **kw: {}, fake_send)
     assert len(sent) == 1  # still available, just fewer seats - no new email
+
+
+def test_digest_send_failure_is_captured_not_silently_reported_as_success():
+    """
+    Regression test for the real bug found in production: the run summary
+    reported a watch as 'emailed' purely because new availability was
+    found, even though the actual send_email_fn call could fail. Now a
+    failure here must be visible in the summary, and the watch must NOT
+    be reported as successfully emailed.
+    """
+    watches = make_watches([
+        {"type": "bus", "source": "Chennai", "destination": "Coimbatore", "date": "2026-08-18",
+         "operators": ["Mettur"]}
+    ])
+    states = {}
+
+    def fake_fetch_bus(*a, **kw):
+        return {"bus1": {"operator": "Mettur Travels", "bus_type": "Sleeper", "available": 3, "departure_time": "22:00"}}
+
+    def failing_send(subject, html):
+        raise RuntimeError("Resend call returned without an email ID")
+
+    summary = run_once(watches, states, fake_fetch_bus, lambda *a, **kw: {}, failing_send)
+
+    assert summary["digest_send_failed"] is True
+    assert summary["emailed_watches"] == []  # must NOT claim success
+    assert "digest_send" in summary["errors"]
+
+
+def test_digest_send_success_still_reports_emailed_watches_normally():
+    watches = make_watches([
+        {"type": "bus", "source": "Chennai", "destination": "Coimbatore", "date": "2026-08-18"}
+    ])
+    states = {}
+    sent = []
+
+    def fake_fetch_bus(*a, **kw):
+        return {"bus1": {"operator": "SRS", "bus_type": "Sleeper", "available": 3, "departure_time": "22:00"}}
+
+    def working_send(subject, html):
+        sent.append((subject, html))
+
+    summary = run_once(watches, states, fake_fetch_bus, lambda *a, **kw: {}, working_send)
+
+    assert summary["digest_send_failed"] is False
+    assert len(summary["emailed_watches"]) == 1
+    assert len(sent) == 1

@@ -43,14 +43,29 @@ jobs:
         if: steps.playwright-cache.outputs.cache-hit != 'true'
         run: python -m playwright install --with-deps chromium
 
+      - name: Install virtual display (xvfb)
+        run: sudo apt-get update && sudo apt-get install -y xvfb
+
+      - name: Diagnose connectivity to redbus.in
+        run: |
+          echo "Testing plain HTTP reachability from this runner's IP..."
+          curl -v --max-time 15 -o /dev/null -w "\nHTTP status: %{http_code}\nTotal time: %{time_total}s\n" https://www.redbus.in || echo "curl FAILED - likely blocked at network level"
+        continue-on-error: true  # diagnostic only - don't fail the job on this
+
       - name: Run watcher
         env:
-          REDBUS_WATCHES: ${{ secrets.REDBUS_WATCHES }}
+          REDBUS_WATCHES: ${{ vars.REDBUS_WATCHES }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           RESEND_FROM: ${{ secrets.RESEND_FROM }}
           RESEND_TO: ${{ secrets.RESEND_TO }}
           REDBUS_FAIL_THRESHOLD: "3"
-        run: python -m redbus_watch.main
+          # Run "headed" (not headless) inside a virtual display. Akamai
+          # Bot Manager (confirmed active on redbus.in via _abck/bm_sz
+          # cookies) commonly flags headless=True as a bot signal - a
+          # headed session under xvfb looks much closer to a real browser
+          # even though nothing is actually visible on this CI runner.
+          REDBUS_HEADLESS: "false"
+        run: xvfb-run -a python -m redbus_watch.main
 
       - name: Commit updated state
         run: |

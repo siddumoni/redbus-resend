@@ -119,3 +119,59 @@ def test_full_list_with_mixed_new_and_old_items_shows_both():
     assert "SRS Travels" in html
     assert "KPN Travels" in html
     assert html.count("NEW</span>") == 1  # only KPN gets the badge
+
+
+def test_bus_item_shows_rating_badge_when_present():
+    sections = [{
+        "watch_label": "Route", "watch_url": "https://example.com", "type": "bus",
+        "items": [{"operator": "Jai Sai Baba Travels", "bus_type": "Sleeper", "available": 24,
+                   "rating": 4.9, "reviews": 1232, "price": 1190, "departure_time": "23:00",
+                   "arrival_time": "05:50", "duration_min": 410, "total_seats": 37, "single_seats": 7}],
+    }]
+    html = build_digest_email(sections)
+    assert "4.9" in html
+    assert "1232" in html
+
+
+def test_bus_item_no_rating_badge_when_rating_missing():
+    sections = [{
+        "watch_label": "Route", "watch_url": "https://example.com", "type": "bus",
+        "items": [{"operator": "Some Operator", "bus_type": "Sleeper", "available": 4}],
+    }]
+    html = build_digest_email(sections)
+    assert "&#9733;" not in html  # no star badge rendered when rating is absent
+
+
+def test_bus_item_shows_duration_and_seats_with_single_count():
+    sections = [{
+        "watch_label": "Route", "watch_url": "https://example.com", "type": "bus",
+        "items": [{"operator": "Op", "bus_type": "Sleeper", "available": 24, "total_seats": 37,
+                   "single_seats": 7, "duration_min": 410, "price": 1190,
+                   "departure_time": "23:00", "arrival_time": "05:50"}],
+    }]
+    html = build_digest_email(sections)
+    assert "6h 50m" in html
+    assert "37 Seats" in html
+    assert "7 Single" in html
+
+
+def test_bus_item_price_shown_with_onwards_label():
+    sections = [{
+        "watch_label": "Route", "watch_url": "https://example.com", "type": "bus",
+        "items": [{"operator": "Op", "bus_type": "Sleeper", "available": 4, "price": 2500,
+                   "departure_time": "21:25", "arrival_time": "07:50"}],
+    }]
+    html = build_digest_email(sections)
+    assert "\u20b92,500" in html
+    assert "Onwards" in html
+
+
+def test_bus_item_no_day_offset_suffix_in_arrival():
+    sections = [{
+        "watch_label": "Route", "watch_url": "https://example.com", "type": "bus",
+        "items": [{"operator": "Op", "bus_type": "Sleeper", "available": 4,
+                   "departure_time": "23:00", "arrival_time": "05:50"}],
+    }]
+    html = build_digest_email(sections)
+    assert "+1d" not in html
+    assert "05:50" in html

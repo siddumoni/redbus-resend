@@ -40,6 +40,43 @@ def _new_badge() -> str:
     )
 
 
+def _rating_badge(rating, reviews) -> str:
+    """RedBus-style rating badge: colored box with score + star, review
+    count alongside. Returns empty string if rating data isn't available
+    (older/partial data), rather than showing a broken "None" badge."""
+    if rating is None:
+        return ""
+    try:
+        rating_val = float(rating)
+    except (TypeError, ValueError):
+        return ""
+
+    if rating_val >= 4.0:
+        color = CHIP_GREEN
+    elif rating_val >= 3.0:
+        color = CHIP_AMBER
+    else:
+        color = CHIP_GREY
+
+    reviews_html = f'<span style="font-size:11px;color:#8a94a3;margin-left:4px;">({reviews})</span>' if reviews else ""
+    return (
+        f'<span style="display:inline-block;padding:2px 7px;border-radius:4px;'
+        f'font-size:12px;font-weight:700;color:#fff;background:{color};">'
+        f"{rating_val:.1f} &#9733;</span>{reviews_html}"
+    )
+
+
+def _format_duration(minutes) -> str:
+    if minutes is None:
+        return ""
+    try:
+        total_min = int(minutes)
+    except (TypeError, ValueError):
+        return ""
+    h, m = divmod(total_min, 60)
+    return f"{h}h {m}m"
+
+
 def _chip(text: str, level: str) -> str:
     if level == "high":
         color, bg = CHIP_GREEN, CHIP_GREEN_BG
@@ -76,23 +113,50 @@ def _bus_item_html(item: dict, booking_url: str) -> str:
     operator = escape(item.get("operator", "Unknown operator"))
     bus_type = escape(item.get("bus_type", ""))
     available = item.get("available", 0)
+    total_seats = item.get("total_seats")
+    single_seats = item.get("single_seats")
     price = item.get("price")
     departure = escape(item.get("departure_time", ""))
-    arrival = item.get("arrival_time", "")
+    arrival = escape(item.get("arrival_time", ""))
     new_badge = _new_badge() if item.get("is_new") else ""
+    rating_html = _rating_badge(item.get("rating"), item.get("reviews"))
+    duration_str = _format_duration(item.get("duration_min"))
 
-    chip = _chip(f"{available} seats left", _chip_level_for_count(available))
-    price_html = f'<span style="color:#5a6472;font-size:13px;"> \u00b7 from \u20b9{price:.0f}</span>' if price else ""
-    timing = f"Departs {departure}"
+    seats_label = f"{total_seats} Seats" if total_seats else f"{available} seats left"
+    if single_seats:
+        seats_label += f" ({single_seats} Single)"
+    meta_line = duration_str
+    if meta_line:
+        meta_line += f" &middot; {seats_label}"
+    else:
+        meta_line = seats_label
+
+    timing_html = f"{departure}"
     if arrival:
-        timing += f" &rarr; Arrives {escape(arrival)}"
+        timing_html += f' <span style="color:#c2c7cf;font-weight:400;">&mdash;</span> {arrival}'
+
+    price_html = f"\u20b9{price:,.0f}" if price else ""
 
     return f"""
     <tr>
-      <td style="padding:14px 18px;border-bottom:1px solid #eceef1;">
-        <div style="font-size:15px;font-weight:600;color:#1a1d23;">{new_badge}{operator}</div>
-        <div style="font-size:13px;color:#5a6472;margin-top:2px;">{bus_type} &middot; {timing}{price_html}</div>
-        <div style="margin-top:8px;">{chip}</div>
+      <td style="padding:16px 18px;border-bottom:1px solid #eceef1;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+          <tr>
+            <td style="font-size:18px;font-weight:700;color:#1a1d23;">{new_badge}{operator}</td>
+            <td style="text-align:right;white-space:nowrap;">{rating_html}</td>
+          </tr>
+          <tr>
+            <td colspan="2" style="font-size:13px;color:#5a6472;padding-top:1px;">{bus_type}</td>
+          </tr>
+          <tr>
+            <td style="font-size:15px;font-weight:600;color:#1a1d23;padding-top:10px;">{timing_html}</td>
+            <td style="font-size:15px;font-weight:600;color:#1a1d23;text-align:right;padding-top:10px;white-space:nowrap;">{price_html}</td>
+          </tr>
+          <tr>
+            <td style="font-size:13px;color:#8a94a3;padding-top:2px;">{meta_line}</td>
+            <td style="font-size:13px;color:#8a94a3;padding-top:2px;text-align:right;">{"Onwards" if price else ""}</td>
+          </tr>
+        </table>
       </td>
     </tr>"""
 
