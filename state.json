@@ -763,9 +763,22 @@
         "reviews": 614,
         "single_seats": 15,
         "total_seats": 43
+      },
+      "SCH568F1D_2026-09-05 18:00:00": {
+        "arrival_time": "03:40",
+        "available": 36,
+        "bus_type": "Bharat Benz A/C Seater /Sleeper (2+1)",
+        "departure_time": "18:00",
+        "duration_min": 580,
+        "operator": "A1 Travels",
+        "price": 1100,
+        "rating": 4.3,
+        "reviews": 39,
+        "single_seats": 15,
+        "total_seats": 43
       }
     },
-    "last_success_ts": "2026-08-07T18:31:55.695279+00:00",
+    "last_success_ts": "2026-08-07T19:38:20.474330+00:00",
     "watch_id": "bus:chennai:coimbatore:2026-09-05:a1,mettur"
   },
   "bus:chennai:coimbatore:2026-11-25:flix,mettur": {
