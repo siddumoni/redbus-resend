@@ -748,7 +748,7 @@
         "price": 800,
         "rating": 4.5,
         "reviews": 574,
-        "single_seats": null,
+        "single_seats": 15,
         "total_seats": 43
       },
       "SCH4A8E2718J_2026-09-05 21:00:00": {
@@ -765,7 +765,7 @@
         "total_seats": 43
       }
     },
-    "last_success_ts": "2026-08-07T00:22:34.695790+00:00",
+    "last_success_ts": "2026-08-07T03:26:27.407204+00:00",
     "watch_id": "bus:chennai:coimbatore:2026-09-05:a1,mettur"
   },
   "bus:chennai:coimbatore:2026-11-25:flix,mettur": {
