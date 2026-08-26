@@ -1,11 +1,7 @@
 name: RedBus Availability Watcher
 
 on:
-  schedule:
-    # Every 15 minutes. Adjust cautiously - RedBus may rate-limit/block
-    # aggressive polling. Start conservative and tighten only if stable.
-    - cron: "*/15 * * * *"
-  workflow_dispatch: {}  # allows manual "Run workflow" button for testing
+  workflow_dispatch:  # allows manual "Run workflow" button for testing
 
 permissions:
   contents: write  # needed to commit state.json back to the repo
