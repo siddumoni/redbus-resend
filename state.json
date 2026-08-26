@@ -993,6 +993,19 @@
         "single_seats": 15,
         "total_seats": 43
       },
+      "SCH388553L_2026-09-25 23:15:00": {
+        "arrival_time": "07:45",
+        "available": 36,
+        "bus_type": "Bharat Benz A/C Seater /Sleeper (2+1)",
+        "departure_time": "23:15",
+        "duration_min": 510,
+        "operator": "A1 Travels",
+        "price": 1100,
+        "rating": 4.2,
+        "reviews": 135,
+        "single_seats": 15,
+        "total_seats": 43
+      },
       "SCH3A841157C_2026-09-25 09:00:00": {
         "arrival_time": "19:00",
         "available": 38,
@@ -1046,7 +1059,7 @@
         "total_seats": 37
       }
     },
-    "last_success_ts": "2026-08-26T08:03:17.363569+00:00",
+    "last_success_ts": "2026-08-26T09:04:57.365721+00:00",
     "watch_id": "bus:coimbatore:chennai:2026-09-25:a1,mettur"
   },
   "bus:coimbatore:chennai:2026-09-26:a1,mettur": {
