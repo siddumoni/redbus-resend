@@ -980,12 +980,12 @@
     "consecutive_failures": 0,
     "last_alert_ts": null,
     "last_snapshots": {
-      "SCH168E1046G_2026-09-25 20:30:00": {
-        "arrival_time": "06:30",
+      "SCH168E1046G_2026-09-25 20:20:00": {
+        "arrival_time": "06:00",
         "available": 42,
         "bus_type": "Bharat Benz A/C Seater /Sleeper (2+1)",
-        "departure_time": "20:30",
-        "duration_min": 600,
+        "departure_time": "20:20",
+        "duration_min": 580,
         "operator": "A1 Travels",
         "price": 750,
         "rating": 4.2,
@@ -1059,7 +1059,7 @@
         "total_seats": 37
       }
     },
-    "last_success_ts": "2026-08-28T22:50:22.229362+00:00",
+    "last_success_ts": "2026-08-28T23:00:31.774276+00:00",
     "watch_id": "bus:coimbatore:chennai:2026-09-25:a1,mettur"
   },
   "bus:coimbatore:chennai:2026-09-26:a1,mettur": {
