@@ -1014,8 +1014,8 @@
         "duration_min": 555,
         "operator": "A1 Travels",
         "price": 700,
-        "rating": 4.2,
-        "reviews": 34,
+        "rating": 4,
+        "reviews": 35,
         "single_seats": 15,
         "total_seats": 43
       },
@@ -1028,7 +1028,7 @@
         "operator": "A1 Travels",
         "price": 700,
         "rating": 4.5,
-        "reviews": 622,
+        "reviews": 620,
         "single_seats": 15,
         "total_seats": 43
       },
@@ -1041,7 +1041,7 @@
         "operator": "A1 Travels",
         "price": 700,
         "rating": 4,
-        "reviews": 666,
+        "reviews": 665,
         "single_seats": 15,
         "total_seats": 43
       },
@@ -1054,12 +1054,12 @@
         "operator": "A1 Travels",
         "price": 800,
         "rating": 4.3,
-        "reviews": 608,
+        "reviews": 609,
         "single_seats": 9,
         "total_seats": 37
       }
     },
-    "last_success_ts": "2026-08-31T05:40:25.449594+00:00",
+    "last_success_ts": "2026-08-31T05:50:22.365800+00:00",
     "watch_id": "bus:coimbatore:chennai:2026-09-25:a1,mettur"
   },
   "bus:coimbatore:chennai:2026-09-26:a1,mettur": {
