@@ -1019,12 +1019,12 @@
         "single_seats": 15,
         "total_seats": 43
       },
-      "SCH468E1286C_2026-09-25 21:00:00": {
+      "SCH468E1286C_2026-09-25 21:10:00": {
         "arrival_time": "06:30",
         "available": 38,
         "bus_type": "NON AC Seater / Sleeper 2+1",
-        "departure_time": "21:00",
-        "duration_min": 570,
+        "departure_time": "21:10",
+        "duration_min": 560,
         "operator": "A1 Travels",
         "price": 700,
         "rating": 4.4,
@@ -1059,7 +1059,7 @@
         "total_seats": 37
       }
     },
-    "last_success_ts": "2026-09-02T08:20:27.462693+00:00",
+    "last_success_ts": "2026-09-02T08:30:27.105348+00:00",
     "watch_id": "bus:coimbatore:chennai:2026-09-25:a1,mettur"
   },
   "bus:coimbatore:chennai:2026-09-26:a1,mettur": {
