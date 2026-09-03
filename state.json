@@ -980,12 +980,12 @@
     "consecutive_failures": 0,
     "last_alert_ts": null,
     "last_snapshots": {
-      "311_2026-09-25 21:07:00": {
+      "311_2026-09-25 20:50:00": {
         "arrival_time": "06:00",
         "available": 43,
         "bus_type": "A/C Seater / Sleeper (2+1)",
-        "departure_time": "21:07",
-        "duration_min": 533,
+        "departure_time": "20:50",
+        "duration_min": 550,
         "operator": "Mettur Super Services(mss)",
         "price": 522,
         "rating": 4,
@@ -1072,7 +1072,7 @@
         "total_seats": 37
       }
     },
-    "last_success_ts": "2026-09-03T12:50:25.615048+00:00",
+    "last_success_ts": "2026-09-03T13:00:31.244468+00:00",
     "watch_id": "bus:coimbatore:chennai:2026-09-25:a1,mettur"
   },
   "bus:coimbatore:chennai:2026-09-26:a1,mettur": {
