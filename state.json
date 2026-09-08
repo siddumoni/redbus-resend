@@ -982,7 +982,7 @@
     "last_snapshots": {
       "311_2026-09-25 21:07:00": {
         "arrival_time": "06:00",
-        "available": 43,
+        "available": 42,
         "bus_type": "A/C Seater / Sleeper (2+1)",
         "departure_time": "21:07",
         "duration_min": 533,
@@ -990,7 +990,7 @@
         "price": 522,
         "rating": 3.9,
         "reviews": 636,
-        "single_seats": 9,
+        "single_seats": 8,
         "total_seats": 48
       },
       "SCH168E1046G_2026-09-25 20:30:00": {
@@ -1072,7 +1072,7 @@
         "total_seats": 43
       }
     },
-    "last_success_ts": "2026-09-08T07:40:25.803724+00:00",
+    "last_success_ts": "2026-09-08T07:50:27.426500+00:00",
     "watch_id": "bus:coimbatore:chennai:2026-09-25:a1,mettur"
   },
   "bus:coimbatore:chennai:2026-09-26:a1,mettur": {
