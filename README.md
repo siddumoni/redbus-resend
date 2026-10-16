@@ -1,34 +1,29 @@
 # RedBus Availability Watcher
 
-A Python watcher for **RedBus bus availability**, with a train-watch configuration path under development. It checks configured routes, compares each successful fetch with saved state, and sends a single HTML email digest through [Resend](https://resend.com) when newly available options are detected.
+A Python watcher for **RedBus bus availability**. It checks configured bus routes, compares each successful fetch with saved state, and sends a single HTML email digest through [Resend](https://resend.com) when newly available options are detected.
 
 The project runs as a **manually triggered GitHub Actions workflow** or can be run locally. It is not currently configured with a scheduled cron trigger.
 
-## Current capabilities
+## Features
 
-| Area | Current status |
-|---|---|
-| Bus availability lookup | Implemented using the observed RedBus city-suggestion and bus-search request schema |
-| Bus details | Normalizes operator, bus type, seat availability, fare, departure/arrival times and related fields |
-| Bus filters | Supports seat-type and operator filtering |
-| Multi-route and multi-date watches | Supported through `REDBUS_WATCHES` |
-| Availability change detection | Compares current results with saved state to identify newly available options and avoid repeated alerts for unchanged results |
-| Email notifications | Sends a combined HTML digest using Resend; includes the current options for affected watches and marks newly available options |
-| Failure handling | Tracks consecutive fetch failures and can send a separate failure alert after a configurable threshold |
-| Train availability lookup | **Not yet fully implemented for live use.** The parser has defensive/schema-tolerant logic, but the live train request adapter intentionally fails closed until the request and response schema are verified |
-| Automated schedule | Not configured; the workflow is triggered manually |
-
-> **Important:** Do not rely on train watches for live notifications until the actual RedBus train request has been captured, validated, implemented and tested end-to-end. The watcher must not interpret an unrecognized train response as confirmed zero availability.
+- Monitor multiple bus routes and travel dates through `REDBUS_WATCHES`.
+- Filter by seat type (seater, sleeper, AC or non-AC) and bus operator.
+- Track available seats, operator, bus type, fares and departure/arrival times.
+- Detect newly available options by comparing successful fetches with the previous state.
+- Send a combined HTML email digest through Resend when new availability is found.
+- Track consecutive fetch failures and send a separate failure alert after the configured threshold.
+- Persist state in `state.json` across GitHub Actions runs.
 
 ## How it works
 
-1. Read and validate the JSON watch list from `REDBUS_WATCHES`.
-2. Load the previous snapshot from `state.json`.
-3. Fetch each configured watch. The bus scraper resolves source and destination cities and requests bus-search results through a browser session. The train scraper currently raises an explicit error until a verified train adapter is implemented.
-4. Compare a successful fetch with the previous snapshot to identify newly available options.
-5. If a watch has new availability, add its full current options to a combined HTML email, marking new options with a `NEW` badge.
-6. If a fetch fails repeatedly, preserve its last successful snapshot and send a separate fetch-failure alert when the failure threshold is reached.
-7. Save the updated state. The GitHub Actions workflow commits `state.json` back to the repository so state persists across workflow runs.
+1. Read and validate the JSON configuration in `REDBUS_WATCHES`.
+2. Load the last-known availability snapshot from `state.json`.
+3. Resolve the source and destination city identifiers and fetch bus-search results using a browser session.
+4. Normalize the bus inventory and apply seat-type and operator filters.
+5. Compare the latest successful results with the saved snapshot.
+6. If new availability is detected, create a combined email digest containing the current options for affected routes and mark newly available options.
+7. Record fetch failures without erasing the last successful snapshot. Send a separate failure alert when consecutive failures reach the configured threshold.
+8. Save the updated state. The GitHub Actions workflow commits `state.json` to the repository for use in later runs.
 
 ## Repository structure
 
@@ -38,13 +33,12 @@ The project runs as a **manually triggered GitHub Actions workflow** or can be r
 │   └── workflows/
 │       └── redbus-watch.yml       # Manual GitHub Actions workflow
 ├── redbus_watch/
-│   ├── config.py                  # REDBUS_WATCHES parsing and validation
+│   ├── config.py                  # Watch-list parsing and validation
 │   ├── main.py                    # Orchestration and change detection
 │   ├── notifier.py                # Resend email delivery
-│   ├── email_template.py          # HTML email and failure-alert templates
+│   ├── email_template.py          # HTML digest and failure-alert templates
 │   ├── scraper_bus.py             # Bus search adapter
-│   ├── scraper_train.py           # Train adapter (live request not yet implemented)
-│   └── state.py                   # Persistent snapshot and failure tracking
+│   └── state.py                   # Persistent snapshots and failure tracking
 ├── tests/
 │   ├── fixtures/                  # Captured RedBus bus API responses
 │   └── test_*.py                  # Unit and regression tests
@@ -58,7 +52,7 @@ The project runs as a **manually triggered GitHub Actions workflow** or can be r
 
 - Python 3.12 (the GitHub Actions workflow uses Python 3.12)
 - Chromium installed through Playwright
-- A Resend account and sender address for email alerts
+- A [Resend](https://resend.com) account and sender address for email alerts
 - RedBus access from the runtime environment
 
 Install dependencies locally:
@@ -74,11 +68,11 @@ python -m pip install -r requirements.txt
 python -m playwright install chromium
 ```
 
-## Configure a watch list
+## Configure bus watches
 
-Set the repository variable `REDBUS_WATCHES` in **Settings → Secrets and variables → Actions → Variables**. The value must be a JSON array.
+Set the repository variable `REDBUS_WATCHES` in **Settings → Secrets and variables → Actions → Variables**. Its value must be a JSON array.
 
-A bus example:
+Example:
 
 ```json
 [
@@ -90,25 +84,31 @@ A bus example:
     "seat_type": "sleeper",
     "operators": ["SRS", "KPN"],
     "label": "Chennai to Coimbatore"
+  },
+  {
+    "type": "bus",
+    "source": "Chennai",
+    "destination": "Bangalore",
+    "date": "2026-12-15",
+    "seat_type": "ac"
   }
 ]
 ```
 
-A single date may be specified as `"date": "YYYY-MM-DD"`; use either `date` or `dates`, not both. Each date is tracked as a separate watch.
+Use either `date` for one date or `dates` for a list of dates, not both. Each date is tracked as a separate watch.
 
 | Field | Required | Purpose |
 |---|---|---|
-| `type` | Yes | `"bus"` or `"train"` |
-| `source` | Yes | City name for a bus watch; station name/code for a train watch |
-| `destination` | Yes | Destination city or train station |
-| `date` | One of `date`/`dates` | One travel date in `YYYY-MM-DD` format |
-| `dates` | One of `date`/`dates` | List of dates in `YYYY-MM-DD` format |
-| `label` | No | Human-friendly label shown in the alert email |
-| `seat_type` | No; bus only | `any`, `seater`, `sleeper`, `ac` or `non_ac`; defaults to `any` |
-| `operators` | No; bus only | List of operator-name substrings; matching is case-insensitive |
-| `classes` | No; train only | Train class codes such as `SL`, `3A`, `2A`; defaults to all returned classes when the adapter is implemented |
+| `type` | Yes | Must be `"bus"` |
+| `source` | Yes | Origin city name |
+| `destination` | Yes | Destination city name |
+| `date` | One of `date`/`dates` | Travel date in `YYYY-MM-DD` format |
+| `dates` | One of `date`/`dates` | List of travel dates in `YYYY-MM-DD` format |
+| `label` | No | Human-readable label included in notification emails |
+| `seat_type` | No | `any`, `seater`, `sleeper`, `ac` or `non_ac`; defaults to `any` |
+| `operators` | No | Operator-name substrings to match, case-insensitively; omitted means any operator |
 
-For now, configure **bus watches for live monitoring**. A train entry can be parsed by configuration, but the live train fetch is not ready for dependable notifications.
+Duplicate watches that resolve to the same watch identifier are rejected during configuration validation.
 
 ### Local configuration example
 
@@ -129,52 +129,40 @@ Use a sender address/domain configured and verified in Resend. Do not commit API
 
 The workflow is `.github/workflows/redbus-watch.yml`.
 
-1. Add the repository variable `REDBUS_WATCHES` under **Settings → Secrets and variables → Actions → Variables**.
+1. Add the `REDBUS_WATCHES` repository variable under **Settings → Secrets and variables → Actions → Variables**.
 2. Add these repository secrets under **Settings → Secrets and variables → Actions → Secrets**:
    - `RESEND_API_KEY`
    - `RESEND_FROM`
    - `RESEND_TO`
 3. Open **Actions → RedBus Availability Watcher → Run workflow** and run it on `main`.
-4. Inspect the logs and confirm the run summary and Resend delivery message.
+4. Review the workflow logs for the run summary and email-delivery status.
 
-The workflow uses Playwright/Chromium and a virtual display, then commits the updated `state.json` back to the repository. It currently defines `workflow_dispatch` only; there is **no schedule/cron trigger**. Add a schedule only after the live fetch path and an appropriate polling interval have been validated.
+The workflow installs Python dependencies and Playwright/Chromium, starts a virtual display, runs the watcher, and commits the updated `state.json` file. It currently defines `workflow_dispatch` only; **no schedule/cron trigger is configured**.
 
-## When an email is sent
+## When emails are sent
 
-The watcher compares each successful fetch with the previous state. An email is sent when one or more watches contain newly available options. The email contains the current list for affected watches and distinguishes new options from previously known options. When nothing newly available is detected, a normal availability digest is not sent.
+The watcher compares each successful fetch against the last saved state. When newly available bus options are detected, it sends one combined digest email containing the current options for affected watches and highlighting newly available options. No normal availability email is sent when nothing new is detected.
 
-If repeated fetch failures exceed the configured threshold (the workflow currently sets `REDBUS_FAIL_THRESHOLD=3`), the watcher can send a separate failure alert. A failed fetch must not erase the last successful state.
+If a fetch repeatedly fails, a separate failure alert can be sent after the consecutive-failure threshold is reached. The current GitHub Actions workflow sets `REDBUS_FAIL_THRESHOLD=3`.
 
-## Discovery and train implementation status
+## Testing
 
-`discover.py` is an interactive capture tool intended to help inspect the network requests made by RedBus while searching. To continue train integration, capture an actual train search and inspect the saved request/response payloads. Verify at least:
-
-- request URL, HTTP method, station identifiers and date format;
-- any required headers, cookies/session requirements and request body;
-- response fields for train identity, travel date, class, availability, fare, departure and arrival;
-- behavior for unavailable classes and valid empty results.
-
-Then implement the verified request in `redbus_watch/scraper_train.py` and add tests based on sanitized real fixtures. Until then, the current train adapter intentionally fails closed rather than generating false availability alerts.
-
-## Tests
-
-Install dependencies and run:
+Install the dependencies and run:
 
 ```bash
-python -m pip install -r requirements.txt
 python -m pytest tests/ -v
 ```
 
-The tests cover configuration validation, state transitions, email rendering, orchestration and bus parsing against captured response fixtures. Unit tests do not prove that RedBus's live website/API will remain unchanged, so live fetch and email behavior should be verified from the target runtime.
+The tests cover configuration validation, state transitions, email rendering, orchestration and bus-response parsing against captured fixtures. Unit tests cannot guarantee that RedBus's live website or undocumented API will remain unchanged, so verify live behavior from the intended runtime environment.
 
 ## Operational notes
 
-- RedBus's site and undocumented endpoints may change or temporarily reject requests.
+- RedBus's website and internal endpoints may change or temporarily reject requests.
 - Use a conservative polling cadence and avoid excessive requests. This repository currently has no scheduled polling configured.
 - Treat a fetch failure as **unknown availability**, not as zero available seats.
-- The email's route link is best-effort and should be verified with a real RedBus browser session.
 - Keep Resend credentials in GitHub Secrets or local environment variables, never in tracked files.
+- Confirm the sender address is permitted by your Resend account before relying on notifications.
 
 ## License
 
-See [LICENSE](LICENSE) if/when one is added to this repository.
+See [LICENSE](LICENSE) if/when a license file is added to this repository.
